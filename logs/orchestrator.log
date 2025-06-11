@@ -1,0 +1,6 @@
+2025-06-11 03:13:45 [DEBUG] asyncio: Using selector: KqueueSelector
+2025-06-11 03:13:45 [INFO] root: Orchestration started for goal: build a to-do list app
+2025-06-11 03:13:45 [ERROR] root: Orchestration error: OllamaClient.__init__() got an unexpected keyword argument 'model_name'
+2025-06-11 03:15:57 [DEBUG] asyncio: Using selector: KqueueSelector
+2025-06-11 03:15:57 [INFO] root: Orchestration started for goal: build a to-do list app
+2025-06-11 03:15:57 [ERROR] root: Orchestration error: OllamaClient.__init__() got an unexpected keyword argument 'model_name'

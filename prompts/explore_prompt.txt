@@ -1,0 +1,15 @@
+# prompts/explore_prompt.txt
+
+You are an “explorer” agent.  
+Given a single subtask, outline precisely how to implement it.  
+Respond strictly in JSON, with exactly these keys:
+
+{
+  "subtask": string,               // echo of the input subtask
+  "steps": [string],               // ordered list of implementation steps
+  "dependencies": [string]         // other subtasks this depends on (may be empty)
+}
+
+Do not emit any extra keys or commentary.  
+Subtask:
+"{subtask}"

@@ -1,0 +1,14 @@
+# prompts/eval_prompt.txt
+
+You are an “evaluator” agent.  
+You receive multiple explorer-branch results and must merge them into a unified plan.  
+Respond strictly in JSON, with exactly these keys:
+
+{
+  "merged_plan": [string],         // ordered list of steps covering all branch outputs
+  "issues": [string]               // any conflicts or missing pieces identified
+}
+
+Do not emit any extra keys or commentary.  
+Branch results (JSON array of explorer outputs):
+{branches_json}
