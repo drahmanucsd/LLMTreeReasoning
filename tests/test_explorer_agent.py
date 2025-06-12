@@ -10,7 +10,7 @@ async def test_explorer_agent_parses(monkeypatch):
     monkeypatch.setattr(OllamaClient, 'send', lambda self, prompt: raw)
 
     agent = ExplorerAgent()
-    result = await agent.run("X")
+    result = await agent.run("X", parent_context="")
 
     assert isinstance(result, ExploreResult)
     assert result.subtask == "X"
@@ -23,7 +23,7 @@ async def test_explorer_agent_no_dependencies(monkeypatch):
     monkeypatch.setattr(OllamaClient, 'send', lambda self, prompt: raw)
 
     agent = ExplorerAgent()
-    result = await agent.run("Y")
+    result = await agent.run("Y", parent_context="")
 
     assert result.subtask == "Y"
     assert result.steps == ["only_step"]

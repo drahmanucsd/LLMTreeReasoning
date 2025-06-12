@@ -1,0 +1,33 @@
+// LLM Call Tree
+digraph {
+	node [fontname=Helvetica style=filled]
+	n0 [label="Create a to-do list app." fillcolor=lightgrey shape=box]
+	n1 [label="Define the target audience and their needs" fillcolor=lightgrey shape=box]
+	n2 [label="Research existing to-do list apps and identify gaps" fillcolor=lightgrey shape=box]
+	n3 [label="Design a user interface for the app" fillcolor=lightgrey shape=box]
+	n4 [label="Decide on a programming language and development framework" fillcolor=lightgrey shape=box]
+	n5 [label="Plan for data storage and synchronization" fillcolor=lightgrey shape=box]
+	n6 [label="Identify key demographics" fillcolor=lightgrey shape=box]
+	n7 [label="Determine functional requirements for users with different needs" fillcolor=lightgrey shape=box]
+	n8 [label="Determine target audience" fillcolor=lightgrey shape=box]
+	n9 [label="Research existing UI trends" fillcolor=lightgrey shape=box]
+	n10 [label="Prioritize key features" fillcolor=lightgrey shape=box]
+	n11 [label="Design database schema" fillcolor=lightgrey shape=box]
+	n12 [label="Choose a cloud storage solution" fillcolor=lightgrey shape=box]
+	n13 [label="Explore synchronization protocols" fillcolor=lightgrey shape=box]
+	n14 [label="Consider offline access options" fillcolor=lightgrey shape=box]
+	n0 -> n1
+	n0 -> n2
+	n0 -> n3
+	n0 -> n4
+	n0 -> n5
+	n5 -> n6
+	n5 -> n7
+	n5 -> n8
+	n5 -> n9
+	n5 -> n10
+	n5 -> n11
+	n5 -> n12
+	n5 -> n13
+	n5 -> n14
+}

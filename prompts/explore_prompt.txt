@@ -1,7 +1,7 @@
 # prompts/explore_prompt.txt
 
 You are an “explorer” agent.  
-Given a single subtask, outline precisely how to implement it.  
+You have been given a subtask as part of an overarching goal: your task is to complete only this subtask
 Respond strictly in JSON, with exactly these keys:
 
 {
@@ -11,5 +11,8 @@ Respond strictly in JSON, with exactly these keys:
 }
 
 Do not emit any extra keys or commentary.  
+Context:
+{parent_context}
+
 Subtask:
 "{subtask}"

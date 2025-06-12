@@ -1,54 +1,73 @@
-import re
+# utils/parser.py
+
 import json
-from typing import Dict
+from typing import Optional, Any, Dict
 
 from schemas.task_models import MetaResult, ExploreResult, EvalResult
 
 
-def _extract_json(raw: str) -> Dict:
-    """
-    Scan raw text for the first JSON object and parse it.
-    Raises ValueError if none found or parsing fails.
-    """
-    # Attempt to find a JSON block in the response
-    match = re.search(r"\{.*\}", raw, re.DOTALL)
-    if not match:
-        raise ValueError("No JSON object found in LLM response")
-    try:
-        return json.loads(match.group())
-    except json.JSONDecodeError as e:
-        raise ValueError(f"Failed to parse JSON: {e}")
-
-
 def parse_meta(raw: str) -> MetaResult:
     """
-    Parse raw LLM output into a MetaResult.
-    Expects JSON with keys: is_multi_step (bool), subtasks (list[str]), approaches (list[str]).
+    Parse a raw JSON string from the meta-agent into a MetaResult.
     """
-    data = _extract_json(raw)
-    # Validate required fields
-    if 'is_multi_step' not in data or 'subtasks' not in data or 'approaches' not in data:
-        raise ValueError(f"Missing keys in MetaResult JSON: {data.keys()}")
-    return MetaResult(**data)
+    try:
+        data = json.loads(raw)
+    except json.JSONDecodeError as e:
+        raise ValueError(f"Invalid JSON in meta response: {e}")
+
+    # Required boolean
+    is_multi = data.get("is_multi_step")
+    # Lists default to empty if missing or null
+    subtasks = data.get("subtasks") or []
+
+    return MetaResult(
+        is_multi_step=is_multi,
+        subtasks=subtasks,
+    )
 
 
 def parse_explore(raw: str) -> ExploreResult:
     """
-    Parse raw LLM output into an ExploreResult.
-    Expects JSON with keys: subtask (str), steps (list[str]), optional dependencies (list[str]).
+    Parse a raw JSON string from the explorer-agent into an ExploreResult.
+    If 'dependencies' is missing, it will be None.
     """
-    data = _extract_json(raw)
-    if 'subtask' not in data or 'steps' not in data:
-        raise ValueError(f"Missing keys in ExploreResult JSON: {data.keys()}")
-    return ExploreResult(**data)
+    try:
+        data = json.loads(raw)
+    except json.JSONDecodeError as e:
+        raise ValueError(f"Invalid JSON in explore response: {e}")
+
+    subtask = data.get("subtask")
+    steps = data.get("steps") or []
+
+    # Only set dependencies if explicitly provided
+    dependencies = data.get("dependencies", None)
+    if isinstance(dependencies, list) and len(dependencies) == 0:
+        # You can choose to treat an empty list as None as well,
+        # but tests expect missing → None, present-but-empty → []
+        # Here we leave an explicit empty list intact.
+        pass
+
+    return ExploreResult(
+        subtask=subtask,
+        steps=steps,
+        dependencies=dependencies,
+    )
 
 
 def parse_eval(raw: str) -> EvalResult:
     """
-    Parse raw LLM output into an EvalResult.
-    Expects JSON with keys: merged_plan (list[str]), issues (list[str]).
+    Parse a raw JSON string from the evaluator-agent into an EvalResult.
     """
-    data = _extract_json(raw)
-    if 'merged_plan' not in data or 'issues' not in data:
-        raise ValueError(f"Missing keys in EvalResult JSON: {data.keys()}")
-    return EvalResult(**data)
+    try:
+        data = json.loads(raw)
+    except json.JSONDecodeError as e:
+        raise ValueError(f"Invalid JSON in eval response: {e}")
+
+    issues = data.get("issues") or []
+    suggestions = data.get("suggestions") or []
+
+
+    return EvalResult(
+        issues=issues,
+        suggestions=suggestions
+    )

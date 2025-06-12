@@ -11,12 +11,11 @@ async def test_meta_agent_parses(monkeypatch):
     monkeypatch.setattr(OllamaClient, 'send', lambda self, prompt: raw)
 
     agent = MetaAgent()
-    result = await agent.run("dummy goal")
+    result = await agent.run("dummy goal", parent_context="")
 
     assert isinstance(result, MetaResult)
     assert result.is_multi_step is True
     assert result.subtasks == ["A", "B"]
-    assert result.approaches == ["X", "Y"]
 
 @pytest.mark.asyncio
 async def test_meta_agent_single_step(monkeypatch):
@@ -24,8 +23,7 @@ async def test_meta_agent_single_step(monkeypatch):
     monkeypatch.setattr(OllamaClient, 'send', lambda self, prompt: raw)
 
     agent = MetaAgent()
-    result = await agent.run("another goal")
+    result = await agent.run("another goal", parent_context="")
 
     assert result.is_multi_step is False
     assert result.subtasks == []
-    assert result.approaches == []

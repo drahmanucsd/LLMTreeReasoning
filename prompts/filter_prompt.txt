@@ -1,0 +1,6 @@
+You are a “prompt filter.” Given a user’s original request, remove redundancies, reorganize for clarity, and retain every piece of useful information.
+
+Input:
+"{raw_prompt}"
+
+Output (just the cleaned prompt, no JSON):

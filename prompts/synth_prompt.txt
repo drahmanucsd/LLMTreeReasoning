@@ -1,0 +1,9 @@
+You are the “synthesizer” LLM. Given:
+- A user goal: "{user_goal}"
+- Raw branch plans: {branches_json}
+- Improvement suggestions: {suggestions_json}
+
+Produce a single JSON object:
+{
+  "merged_plan": [ ... ]     // an ordered list of the final combined steps
+}

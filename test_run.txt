@@ -1,0 +1,1657 @@
+2025-06-11 16:21:41 [DEBUG] asyncio: Using selector: KqueueSelector
+2025-06-11 16:21:41 [DEBUG] root: [PromptFilterAgent] using prompt template from /Users/danirahman/Repos/LLMTreeReasoning/prompts/filter_prompt.txt
+2025-06-11 16:21:41 [DEBUG] root: [PromptFilterAgent] filled prompt:
+You are a “prompt filter.” Given a user’s original request, remove redundancies, reorganize for clarity, and retain every piece of useful information.
+
+Input:
+"build a to-do list app"
+
+Output (just the cleaned prompt, no JSON):
+
+--- end prompt ---
+2025-06-11 16:21:41 [INFO] root: OllamaClient: running ['ollama', 'run', 'llama3', 'You are a “prompt filter.” Given a user’s original request, remove redundancies, reorganize for clarity, and retain every piece of useful information.\n\nInput:\n"build a to-do list app"\n\nOutput (just the cleaned prompt, no JSON):\n'] (attempt 1)
+2025-06-11 16:21:42 [INFO] root: OllamaClient: running ['ollama', 'run', 'llama3', 'You are a “prompt filter.” Given a user’s original request, remove redundancies, reorganize for clarity, and retain every piece of useful information.\n\nInput:\n"build a to-do list app"\n\nOutput (just the cleaned prompt, no JSON):\n'] (attempt 1)
+2025-06-11 16:21:42 [DEBUG] asyncio: Using selector: KqueueSelector
+2025-06-11 16:21:42 [INFO] root: Orchestration started for goal: Create a to-do list app. (depth=1)
+2025-06-11 16:21:42 [DEBUG] root: [MetaAgent] using prompt template from /Users/danirahman/Repos/LLMTreeReasoning/prompts/meta_prompt.txt
+2025-06-11 16:21:42 [DEBUG] root: [MetaAgent] filled prompt:
+# prompts/meta_prompt.txt
+
+You are a “meta-agent.”  
+Your job is to analyze a user’s goal and determine whether it is a multi-step or multi-approach problem.  
+If you believe it there are multiple approaches that all worth peruing, exclusively list those, do not enumerate any steps. Do not mix in apporaches and steps into the subtasks list. 
+Respond strictly in JSON, with exactly these keys:
+
+{
+  "is_multi_step": boolean,        // true if the task breaks down into subtasks
+  "subtasks": [string],            // list of immediate subtasks (one layer deep) or list of alternative high-level strategies -- each phrased as a prompt; empty if none
+}
+
+Do not emit any extra keys or commentary.  
+Context:
+
+
+Input:
+"Create a to-do list app."
+
+--- end prompt ---
+2025-06-11 16:21:42 [INFO] root: OllamaClient: running ['ollama', 'run', 'llama3', '# prompts/meta_prompt.txt\n\nYou are a “meta-agent.”  \nYour job is to analyze a user’s goal and determine whether it is a multi-step or multi-approach problem.  \nIf you believe it there are multiple approaches that all worth peruing, exclusively list those, do not enumerate any steps. Do not mix in apporaches and steps into the subtasks list. \nRespond strictly in JSON, with exactly these keys:\n\n{\n  "is_multi_step": boolean,        // true if the task breaks down into subtasks\n  "subtasks": [string],            // list of immediate subtasks (one layer deep) or list of alternative high-level strategies -- each phrased as a prompt; empty if none\n}\n\nDo not emit any extra keys or commentary.  \nContext:\n\n\nInput:\n"Create a to-do list app."\n'] (attempt 1)
+2025-06-11 16:21:44 [INFO] root: OllamaClient: running ['ollama', 'run', 'llama3', '# prompts/meta_prompt.txt\n\nYou are a “meta-agent.”  \nYour job is to analyze a user’s goal and determine whether it is a multi-step or multi-approach problem.  \nIf you believe it there are multiple approaches that all worth peruing, exclusively list those, do not enumerate any steps. Do not mix in apporaches and steps into the subtasks list. \nRespond strictly in JSON, with exactly these keys:\n\n{\n  "is_multi_step": boolean,        // true if the task breaks down into subtasks\n  "subtasks": [string],            // list of immediate subtasks (one layer deep) or list of alternative high-level strategies -- each phrased as a prompt; empty if none\n}\n\nDo not emit any extra keys or commentary.  \nContext:\n\n\nInput:\n"Create a to-do list app."\n'] (attempt 1)
+2025-06-11 16:21:45 [INFO] root: Identified subtasks: ['Define the target audience and their needs', 'Research existing to-do list apps and identify gaps', 'Design a user interface for the app', 'Decide on a programming language and development framework', 'Plan for data storage and synchronization']
+2025-06-11 16:21:45 [INFO] root: Orchestration started for goal: Define the target audience and their needs (depth=2)
+2025-06-11 16:21:45 [DEBUG] root: [MetaAgent] using prompt template from /Users/danirahman/Repos/LLMTreeReasoning/prompts/meta_prompt.txt
+2025-06-11 16:21:45 [DEBUG] root: [MetaAgent] filled prompt:
+# prompts/meta_prompt.txt
+
+You are a “meta-agent.”  
+Your job is to analyze a user’s goal and determine whether it is a multi-step or multi-approach problem.  
+If you believe it there are multiple approaches that all worth peruing, exclusively list those, do not enumerate any steps. Do not mix in apporaches and steps into the subtasks list. 
+Respond strictly in JSON, with exactly these keys:
+
+{
+  "is_multi_step": boolean,        // true if the task breaks down into subtasks
+  "subtasks": [string],            // list of immediate subtasks (one layer deep) or list of alternative high-level strategies -- each phrased as a prompt; empty if none
+}
+
+Do not emit any extra keys or commentary.  
+Context:
+User goal at depth 1: Create a to-do list app.
+
+Input:
+"Define the target audience and their needs"
+
+--- end prompt ---
+2025-06-11 16:21:45 [INFO] root: OllamaClient: running ['ollama', 'run', 'llama3', '# prompts/meta_prompt.txt\n\nYou are a “meta-agent.”  \nYour job is to analyze a user’s goal and determine whether it is a multi-step or multi-approach problem.  \nIf you believe it there are multiple approaches that all worth peruing, exclusively list those, do not enumerate any steps. Do not mix in apporaches and steps into the subtasks list. \nRespond strictly in JSON, with exactly these keys:\n\n{\n  "is_multi_step": boolean,        // true if the task breaks down into subtasks\n  "subtasks": [string],            // list of immediate subtasks (one layer deep) or list of alternative high-level strategies -- each phrased as a prompt; empty if none\n}\n\nDo not emit any extra keys or commentary.  \nContext:\nUser goal at depth 1: Create a to-do list app.\n\nInput:\n"Define the target audience and their needs"\n'] (attempt 1)
+2025-06-11 16:21:46 [INFO] root: OllamaClient: running ['ollama', 'run', 'llama3', '# prompts/meta_prompt.txt\n\nYou are a “meta-agent.”  \nYour job is to analyze a user’s goal and determine whether it is a multi-step or multi-approach problem.  \nIf you believe it there are multiple approaches that all worth peruing, exclusively list those, do not enumerate any steps. Do not mix in apporaches and steps into the subtasks list. \nRespond strictly in JSON, with exactly these keys:\n\n{\n  "is_multi_step": boolean,        // true if the task breaks down into subtasks\n  "subtasks": [string],            // list of immediate subtasks (one layer deep) or list of alternative high-level strategies -- each phrased as a prompt; empty if none\n}\n\nDo not emit any extra keys or commentary.  \nContext:\nUser goal at depth 1: Create a to-do list app.\n\nInput:\n"Define the target audience and their needs"\n'] (attempt 1)
+2025-06-11 16:21:47 [INFO] root: Identified subtasks: ['Identify key demographics', 'Determine functional requirements for users with different needs']
+2025-06-11 16:21:47 [INFO] root: Orchestration started for goal: Research existing to-do list apps and identify gaps (depth=2)
+2025-06-11 16:21:47 [DEBUG] root: [MetaAgent] using prompt template from /Users/danirahman/Repos/LLMTreeReasoning/prompts/meta_prompt.txt
+2025-06-11 16:21:47 [DEBUG] root: [MetaAgent] filled prompt:
+# prompts/meta_prompt.txt
+
+You are a “meta-agent.”  
+Your job is to analyze a user’s goal and determine whether it is a multi-step or multi-approach problem.  
+If you believe it there are multiple approaches that all worth peruing, exclusively list those, do not enumerate any steps. Do not mix in apporaches and steps into the subtasks list. 
+Respond strictly in JSON, with exactly these keys:
+
+{
+  "is_multi_step": boolean,        // true if the task breaks down into subtasks
+  "subtasks": [string],            // list of immediate subtasks (one layer deep) or list of alternative high-level strategies -- each phrased as a prompt; empty if none
+}
+
+Do not emit any extra keys or commentary.  
+Context:
+User goal at depth 1: Create a to-do list app.
+
+Input:
+"Research existing to-do list apps and identify gaps"
+
+--- end prompt ---
+2025-06-11 16:21:47 [INFO] root: OllamaClient: running ['ollama', 'run', 'llama3', '# prompts/meta_prompt.txt\n\nYou are a “meta-agent.”  \nYour job is to analyze a user’s goal and determine whether it is a multi-step or multi-approach problem.  \nIf you believe it there are multiple approaches that all worth peruing, exclusively list those, do not enumerate any steps. Do not mix in apporaches and steps into the subtasks list. \nRespond strictly in JSON, with exactly these keys:\n\n{\n  "is_multi_step": boolean,        // true if the task breaks down into subtasks\n  "subtasks": [string],            // list of immediate subtasks (one layer deep) or list of alternative high-level strategies -- each phrased as a prompt; empty if none\n}\n\nDo not emit any extra keys or commentary.  \nContext:\nUser goal at depth 1: Create a to-do list app.\n\nInput:\n"Research existing to-do list apps and identify gaps"\n'] (attempt 1)
+2025-06-11 16:21:48 [INFO] root: OllamaClient: running ['ollama', 'run', 'llama3', '# prompts/meta_prompt.txt\n\nYou are a “meta-agent.”  \nYour job is to analyze a user’s goal and determine whether it is a multi-step or multi-approach problem.  \nIf you believe it there are multiple approaches that all worth peruing, exclusively list those, do not enumerate any steps. Do not mix in apporaches and steps into the subtasks list. \nRespond strictly in JSON, with exactly these keys:\n\n{\n  "is_multi_step": boolean,        // true if the task breaks down into subtasks\n  "subtasks": [string],            // list of immediate subtasks (one layer deep) or list of alternative high-level strategies -- each phrased as a prompt; empty if none\n}\n\nDo not emit any extra keys or commentary.  \nContext:\nUser goal at depth 1: Create a to-do list app.\n\nInput:\n"Research existing to-do list apps and identify gaps"\n'] (attempt 1)
+2025-06-11 16:21:49 [INFO] root: Identified subtasks: ['Create a to-do list app.']
+2025-06-11 16:21:49 [INFO] root: Orchestration started for goal: Design a user interface for the app (depth=2)
+2025-06-11 16:21:49 [DEBUG] root: [MetaAgent] using prompt template from /Users/danirahman/Repos/LLMTreeReasoning/prompts/meta_prompt.txt
+2025-06-11 16:21:49 [DEBUG] root: [MetaAgent] filled prompt:
+# prompts/meta_prompt.txt
+
+You are a “meta-agent.”  
+Your job is to analyze a user’s goal and determine whether it is a multi-step or multi-approach problem.  
+If you believe it there are multiple approaches that all worth peruing, exclusively list those, do not enumerate any steps. Do not mix in apporaches and steps into the subtasks list. 
+Respond strictly in JSON, with exactly these keys:
+
+{
+  "is_multi_step": boolean,        // true if the task breaks down into subtasks
+  "subtasks": [string],            // list of immediate subtasks (one layer deep) or list of alternative high-level strategies -- each phrased as a prompt; empty if none
+}
+
+Do not emit any extra keys or commentary.  
+Context:
+User goal at depth 1: Create a to-do list app.
+
+Input:
+"Design a user interface for the app"
+
+--- end prompt ---
+2025-06-11 16:21:49 [INFO] root: OllamaClient: running ['ollama', 'run', 'llama3', '# prompts/meta_prompt.txt\n\nYou are a “meta-agent.”  \nYour job is to analyze a user’s goal and determine whether it is a multi-step or multi-approach problem.  \nIf you believe it there are multiple approaches that all worth peruing, exclusively list those, do not enumerate any steps. Do not mix in apporaches and steps into the subtasks list. \nRespond strictly in JSON, with exactly these keys:\n\n{\n  "is_multi_step": boolean,        // true if the task breaks down into subtasks\n  "subtasks": [string],            // list of immediate subtasks (one layer deep) or list of alternative high-level strategies -- each phrased as a prompt; empty if none\n}\n\nDo not emit any extra keys or commentary.  \nContext:\nUser goal at depth 1: Create a to-do list app.\n\nInput:\n"Design a user interface for the app"\n'] (attempt 1)
+2025-06-11 16:21:50 [INFO] root: OllamaClient: running ['ollama', 'run', 'llama3', '# prompts/meta_prompt.txt\n\nYou are a “meta-agent.”  \nYour job is to analyze a user’s goal and determine whether it is a multi-step or multi-approach problem.  \nIf you believe it there are multiple approaches that all worth peruing, exclusively list those, do not enumerate any steps. Do not mix in apporaches and steps into the subtasks list. \nRespond strictly in JSON, with exactly these keys:\n\n{\n  "is_multi_step": boolean,        // true if the task breaks down into subtasks\n  "subtasks": [string],            // list of immediate subtasks (one layer deep) or list of alternative high-level strategies -- each phrased as a prompt; empty if none\n}\n\nDo not emit any extra keys or commentary.  \nContext:\nUser goal at depth 1: Create a to-do list app.\n\nInput:\n"Design a user interface for the app"\n'] (attempt 1)
+2025-06-11 16:21:51 [INFO] root: Identified subtasks: ['Determine target audience', 'Research existing UI trends', 'Prioritize key features']
+2025-06-11 16:21:51 [INFO] root: Orchestration started for goal: Decide on a programming language and development framework (depth=2)
+2025-06-11 16:21:51 [DEBUG] root: [MetaAgent] using prompt template from /Users/danirahman/Repos/LLMTreeReasoning/prompts/meta_prompt.txt
+2025-06-11 16:21:51 [DEBUG] root: [MetaAgent] filled prompt:
+# prompts/meta_prompt.txt
+
+You are a “meta-agent.”  
+Your job is to analyze a user’s goal and determine whether it is a multi-step or multi-approach problem.  
+If you believe it there are multiple approaches that all worth peruing, exclusively list those, do not enumerate any steps. Do not mix in apporaches and steps into the subtasks list. 
+Respond strictly in JSON, with exactly these keys:
+
+{
+  "is_multi_step": boolean,        // true if the task breaks down into subtasks
+  "subtasks": [string],            // list of immediate subtasks (one layer deep) or list of alternative high-level strategies -- each phrased as a prompt; empty if none
+}
+
+Do not emit any extra keys or commentary.  
+Context:
+User goal at depth 1: Create a to-do list app.
+
+Input:
+"Decide on a programming language and development framework"
+
+--- end prompt ---
+2025-06-11 16:21:51 [INFO] root: OllamaClient: running ['ollama', 'run', 'llama3', '# prompts/meta_prompt.txt\n\nYou are a “meta-agent.”  \nYour job is to analyze a user’s goal and determine whether it is a multi-step or multi-approach problem.  \nIf you believe it there are multiple approaches that all worth peruing, exclusively list those, do not enumerate any steps. Do not mix in apporaches and steps into the subtasks list. \nRespond strictly in JSON, with exactly these keys:\n\n{\n  "is_multi_step": boolean,        // true if the task breaks down into subtasks\n  "subtasks": [string],            // list of immediate subtasks (one layer deep) or list of alternative high-level strategies -- each phrased as a prompt; empty if none\n}\n\nDo not emit any extra keys or commentary.  \nContext:\nUser goal at depth 1: Create a to-do list app.\n\nInput:\n"Decide on a programming language and development framework"\n'] (attempt 1)
+2025-06-11 16:21:53 [INFO] root: OllamaClient: running ['ollama', 'run', 'llama3', '# prompts/meta_prompt.txt\n\nYou are a “meta-agent.”  \nYour job is to analyze a user’s goal and determine whether it is a multi-step or multi-approach problem.  \nIf you believe it there are multiple approaches that all worth peruing, exclusively list those, do not enumerate any steps. Do not mix in apporaches and steps into the subtasks list. \nRespond strictly in JSON, with exactly these keys:\n\n{\n  "is_multi_step": boolean,        // true if the task breaks down into subtasks\n  "subtasks": [string],            // list of immediate subtasks (one layer deep) or list of alternative high-level strategies -- each phrased as a prompt; empty if none\n}\n\nDo not emit any extra keys or commentary.  \nContext:\nUser goal at depth 1: Create a to-do list app.\n\nInput:\n"Decide on a programming language and development framework"\n'] (attempt 1)
+2025-06-11 16:21:53 [INFO] root: Identified subtasks: ['Create a to-do list app.']
+2025-06-11 16:21:53 [INFO] root: Orchestration started for goal: Plan for data storage and synchronization (depth=2)
+2025-06-11 16:21:53 [DEBUG] root: [MetaAgent] using prompt template from /Users/danirahman/Repos/LLMTreeReasoning/prompts/meta_prompt.txt
+2025-06-11 16:21:53 [DEBUG] root: [MetaAgent] filled prompt:
+# prompts/meta_prompt.txt
+
+You are a “meta-agent.”  
+Your job is to analyze a user’s goal and determine whether it is a multi-step or multi-approach problem.  
+If you believe it there are multiple approaches that all worth peruing, exclusively list those, do not enumerate any steps. Do not mix in apporaches and steps into the subtasks list. 
+Respond strictly in JSON, with exactly these keys:
+
+{
+  "is_multi_step": boolean,        // true if the task breaks down into subtasks
+  "subtasks": [string],            // list of immediate subtasks (one layer deep) or list of alternative high-level strategies -- each phrased as a prompt; empty if none
+}
+
+Do not emit any extra keys or commentary.  
+Context:
+User goal at depth 1: Create a to-do list app.
+
+Input:
+"Plan for data storage and synchronization"
+
+--- end prompt ---
+2025-06-11 16:21:53 [INFO] root: OllamaClient: running ['ollama', 'run', 'llama3', '# prompts/meta_prompt.txt\n\nYou are a “meta-agent.”  \nYour job is to analyze a user’s goal and determine whether it is a multi-step or multi-approach problem.  \nIf you believe it there are multiple approaches that all worth peruing, exclusively list those, do not enumerate any steps. Do not mix in apporaches and steps into the subtasks list. \nRespond strictly in JSON, with exactly these keys:\n\n{\n  "is_multi_step": boolean,        // true if the task breaks down into subtasks\n  "subtasks": [string],            // list of immediate subtasks (one layer deep) or list of alternative high-level strategies -- each phrased as a prompt; empty if none\n}\n\nDo not emit any extra keys or commentary.  \nContext:\nUser goal at depth 1: Create a to-do list app.\n\nInput:\n"Plan for data storage and synchronization"\n'] (attempt 1)
+2025-06-11 16:21:54 [INFO] root: OllamaClient: running ['ollama', 'run', 'llama3', '# prompts/meta_prompt.txt\n\nYou are a “meta-agent.”  \nYour job is to analyze a user’s goal and determine whether it is a multi-step or multi-approach problem.  \nIf you believe it there are multiple approaches that all worth peruing, exclusively list those, do not enumerate any steps. Do not mix in apporaches and steps into the subtasks list. \nRespond strictly in JSON, with exactly these keys:\n\n{\n  "is_multi_step": boolean,        // true if the task breaks down into subtasks\n  "subtasks": [string],            // list of immediate subtasks (one layer deep) or list of alternative high-level strategies -- each phrased as a prompt; empty if none\n}\n\nDo not emit any extra keys or commentary.  \nContext:\nUser goal at depth 1: Create a to-do list app.\n\nInput:\n"Plan for data storage and synchronization"\n'] (attempt 1)
+2025-06-11 16:21:55 [INFO] root: Identified subtasks: ['Design database schema', 'Choose a cloud storage solution', 'Explore synchronization protocols', 'Consider offline access options']
+2025-06-11 16:21:55 [INFO] root: Orchestration started for goal: Identify key demographics (depth=3)
+2025-06-11 16:21:55 [DEBUG] root: [MetaAgent] using prompt template from /Users/danirahman/Repos/LLMTreeReasoning/prompts/meta_prompt.txt
+2025-06-11 16:21:55 [DEBUG] root: [MetaAgent] filled prompt:
+# prompts/meta_prompt.txt
+
+You are a “meta-agent.”  
+Your job is to analyze a user’s goal and determine whether it is a multi-step or multi-approach problem.  
+If you believe it there are multiple approaches that all worth peruing, exclusively list those, do not enumerate any steps. Do not mix in apporaches and steps into the subtasks list. 
+Respond strictly in JSON, with exactly these keys:
+
+{
+  "is_multi_step": boolean,        // true if the task breaks down into subtasks
+  "subtasks": [string],            // list of immediate subtasks (one layer deep) or list of alternative high-level strategies -- each phrased as a prompt; empty if none
+}
+
+Do not emit any extra keys or commentary.  
+Context:
+User goal at depth 1: Create a to-do list app.
+User goal at depth 2: Define the target audience and their needs
+
+Input:
+"Identify key demographics"
+
+--- end prompt ---
+2025-06-11 16:21:55 [INFO] root: OllamaClient: running ['ollama', 'run', 'llama3', '# prompts/meta_prompt.txt\n\nYou are a “meta-agent.”  \nYour job is to analyze a user’s goal and determine whether it is a multi-step or multi-approach problem.  \nIf you believe it there are multiple approaches that all worth peruing, exclusively list those, do not enumerate any steps. Do not mix in apporaches and steps into the subtasks list. \nRespond strictly in JSON, with exactly these keys:\n\n{\n  "is_multi_step": boolean,        // true if the task breaks down into subtasks\n  "subtasks": [string],            // list of immediate subtasks (one layer deep) or list of alternative high-level strategies -- each phrased as a prompt; empty if none\n}\n\nDo not emit any extra keys or commentary.  \nContext:\nUser goal at depth 1: Create a to-do list app.\nUser goal at depth 2: Define the target audience and their needs\n\nInput:\n"Identify key demographics"\n'] (attempt 1)
+2025-06-11 16:21:56 [INFO] root: OllamaClient: running ['ollama', 'run', 'llama3', '# prompts/meta_prompt.txt\n\nYou are a “meta-agent.”  \nYour job is to analyze a user’s goal and determine whether it is a multi-step or multi-approach problem.  \nIf you believe it there are multiple approaches that all worth peruing, exclusively list those, do not enumerate any steps. Do not mix in apporaches and steps into the subtasks list. \nRespond strictly in JSON, with exactly these keys:\n\n{\n  "is_multi_step": boolean,        // true if the task breaks down into subtasks\n  "subtasks": [string],            // list of immediate subtasks (one layer deep) or list of alternative high-level strategies -- each phrased as a prompt; empty if none\n}\n\nDo not emit any extra keys or commentary.  \nContext:\nUser goal at depth 1: Create a to-do list app.\nUser goal at depth 2: Define the target audience and their needs\n\nInput:\n"Identify key demographics"\n'] (attempt 1)
+2025-06-11 16:21:57 [INFO] root: Identified subtasks: ['Create a to-do list app.']
+2025-06-11 16:21:57 [INFO] root: Orchestration started for goal: Determine functional requirements for users with different needs (depth=3)
+2025-06-11 16:21:57 [DEBUG] root: [MetaAgent] using prompt template from /Users/danirahman/Repos/LLMTreeReasoning/prompts/meta_prompt.txt
+2025-06-11 16:21:57 [DEBUG] root: [MetaAgent] filled prompt:
+# prompts/meta_prompt.txt
+
+You are a “meta-agent.”  
+Your job is to analyze a user’s goal and determine whether it is a multi-step or multi-approach problem.  
+If you believe it there are multiple approaches that all worth peruing, exclusively list those, do not enumerate any steps. Do not mix in apporaches and steps into the subtasks list. 
+Respond strictly in JSON, with exactly these keys:
+
+{
+  "is_multi_step": boolean,        // true if the task breaks down into subtasks
+  "subtasks": [string],            // list of immediate subtasks (one layer deep) or list of alternative high-level strategies -- each phrased as a prompt; empty if none
+}
+
+Do not emit any extra keys or commentary.  
+Context:
+User goal at depth 1: Create a to-do list app.
+User goal at depth 2: Define the target audience and their needs
+
+Input:
+"Determine functional requirements for users with different needs"
+
+--- end prompt ---
+2025-06-11 16:21:57 [INFO] root: OllamaClient: running ['ollama', 'run', 'llama3', '# prompts/meta_prompt.txt\n\nYou are a “meta-agent.”  \nYour job is to analyze a user’s goal and determine whether it is a multi-step or multi-approach problem.  \nIf you believe it there are multiple approaches that all worth peruing, exclusively list those, do not enumerate any steps. Do not mix in apporaches and steps into the subtasks list. \nRespond strictly in JSON, with exactly these keys:\n\n{\n  "is_multi_step": boolean,        // true if the task breaks down into subtasks\n  "subtasks": [string],            // list of immediate subtasks (one layer deep) or list of alternative high-level strategies -- each phrased as a prompt; empty if none\n}\n\nDo not emit any extra keys or commentary.  \nContext:\nUser goal at depth 1: Create a to-do list app.\nUser goal at depth 2: Define the target audience and their needs\n\nInput:\n"Determine functional requirements for users with different needs"\n'] (attempt 1)
+2025-06-11 16:21:58 [INFO] root: OllamaClient: running ['ollama', 'run', 'llama3', '# prompts/meta_prompt.txt\n\nYou are a “meta-agent.”  \nYour job is to analyze a user’s goal and determine whether it is a multi-step or multi-approach problem.  \nIf you believe it there are multiple approaches that all worth peruing, exclusively list those, do not enumerate any steps. Do not mix in apporaches and steps into the subtasks list. \nRespond strictly in JSON, with exactly these keys:\n\n{\n  "is_multi_step": boolean,        // true if the task breaks down into subtasks\n  "subtasks": [string],            // list of immediate subtasks (one layer deep) or list of alternative high-level strategies -- each phrased as a prompt; empty if none\n}\n\nDo not emit any extra keys or commentary.  \nContext:\nUser goal at depth 1: Create a to-do list app.\nUser goal at depth 2: Define the target audience and their needs\n\nInput:\n"Determine functional requirements for users with different needs"\n'] (attempt 1)
+2025-06-11 16:21:59 [INFO] root: Identified subtasks: ['Define the primary user group', 'Identify unique needs of each user segment', 'Analyze how these needs impact app functionality and features']
+2025-06-11 16:21:59 [DEBUG] root: [ExplorerAgent] using prompt template from /Users/danirahman/Repos/LLMTreeReasoning/prompts/explore_prompt.txt
+2025-06-11 16:21:59 [DEBUG] root: [ExplorerAgent] filled prompt:
+# prompts/explore_prompt.txt
+
+You are an “explorer” agent.  
+You have been given a subtask as part of an overarching goal: your task is to complete only this subtask
+Respond strictly in JSON, with exactly these keys:
+
+{
+  "subtask": string,               // echo of the input subtask
+  "steps": [string],               // ordered list of implementation steps
+  "dependencies": [string]         // other subtasks this depends on (may be empty)
+}
+
+Do not emit any extra keys or commentary.  
+Context:
+User goal at depth 1: Create a to-do list app.
+User goal at depth 2: Research existing to-do list apps and identify gaps
+
+Subtask:
+"Identify key features of existing to-do list apps"
+
+--- end prompt ---
+2025-06-11 16:21:59 [INFO] root: OllamaClient: running ['ollama', 'run', 'llama3', '# prompts/explore_prompt.txt\n\nYou are an “explorer” agent.  \nYou have been given a subtask as part of an overarching goal: your task is to complete only this subtask\nRespond strictly in JSON, with exactly these keys:\n\n{\n  "subtask": string,               // echo of the input subtask\n  "steps": [string],               // ordered list of implementation steps\n  "dependencies": [string]         // other subtasks this depends on (may be empty)\n}\n\nDo not emit any extra keys or commentary.  \nContext:\nUser goal at depth 1: Create a to-do list app.\nUser goal at depth 2: Research existing to-do list apps and identify gaps\n\nSubtask:\n"Identify key features of existing to-do list apps"\n'] (attempt 1)
+2025-06-11 16:22:02 [INFO] root: OllamaClient: running ['ollama', 'run', 'llama3', '# prompts/explore_prompt.txt\n\nYou are an “explorer” agent.  \nYou have been given a subtask as part of an overarching goal: your task is to complete only this subtask\nRespond strictly in JSON, with exactly these keys:\n\n{\n  "subtask": string,               // echo of the input subtask\n  "steps": [string],               // ordered list of implementation steps\n  "dependencies": [string]         // other subtasks this depends on (may be empty)\n}\n\nDo not emit any extra keys or commentary.  \nContext:\nUser goal at depth 1: Create a to-do list app.\nUser goal at depth 2: Research existing to-do list apps and identify gaps\n\nSubtask:\n"Identify key features of existing to-do list apps"\n'] (attempt 1)
+2025-06-11 16:22:03 [DEBUG] root: [ExplorerAgent] using prompt template from /Users/danirahman/Repos/LLMTreeReasoning/prompts/explore_prompt.txt
+2025-06-11 16:22:03 [DEBUG] root: [ExplorerAgent] filled prompt:
+# prompts/explore_prompt.txt
+
+You are an “explorer” agent.  
+You have been given a subtask as part of an overarching goal: your task is to complete only this subtask
+Respond strictly in JSON, with exactly these keys:
+
+{
+  "subtask": string,               // echo of the input subtask
+  "steps": [string],               // ordered list of implementation steps
+  "dependencies": [string]         // other subtasks this depends on (may be empty)
+}
+
+Do not emit any extra keys or commentary.  
+Context:
+User goal at depth 1: Create a to-do list app.
+User goal at depth 2: Research existing to-do list apps and identify gaps
+
+Subtask:
+"Analyze user needs and preferences"
+
+--- end prompt ---
+2025-06-11 16:22:03 [INFO] root: OllamaClient: running ['ollama', 'run', 'llama3', '# prompts/explore_prompt.txt\n\nYou are an “explorer” agent.  \nYou have been given a subtask as part of an overarching goal: your task is to complete only this subtask\nRespond strictly in JSON, with exactly these keys:\n\n{\n  "subtask": string,               // echo of the input subtask\n  "steps": [string],               // ordered list of implementation steps\n  "dependencies": [string]         // other subtasks this depends on (may be empty)\n}\n\nDo not emit any extra keys or commentary.  \nContext:\nUser goal at depth 1: Create a to-do list app.\nUser goal at depth 2: Research existing to-do list apps and identify gaps\n\nSubtask:\n"Analyze user needs and preferences"\n'] (attempt 1)
+2025-06-11 16:22:06 [INFO] root: OllamaClient: running ['ollama', 'run', 'llama3', '# prompts/explore_prompt.txt\n\nYou are an “explorer” agent.  \nYou have been given a subtask as part of an overarching goal: your task is to complete only this subtask\nRespond strictly in JSON, with exactly these keys:\n\n{\n  "subtask": string,               // echo of the input subtask\n  "steps": [string],               // ordered list of implementation steps\n  "dependencies": [string]         // other subtasks this depends on (may be empty)\n}\n\nDo not emit any extra keys or commentary.  \nContext:\nUser goal at depth 1: Create a to-do list app.\nUser goal at depth 2: Research existing to-do list apps and identify gaps\n\nSubtask:\n"Analyze user needs and preferences"\n'] (attempt 1)
+2025-06-11 16:22:08 [INFO] root: Orchestration started for goal: Determine target audience (depth=3)
+2025-06-11 16:22:08 [DEBUG] root: [MetaAgent] using prompt template from /Users/danirahman/Repos/LLMTreeReasoning/prompts/meta_prompt.txt
+2025-06-11 16:22:08 [DEBUG] root: [MetaAgent] filled prompt:
+# prompts/meta_prompt.txt
+
+You are a “meta-agent.”  
+Your job is to analyze a user’s goal and determine whether it is a multi-step or multi-approach problem.  
+If you believe it there are multiple approaches that all worth peruing, exclusively list those, do not enumerate any steps. Do not mix in apporaches and steps into the subtasks list. 
+Respond strictly in JSON, with exactly these keys:
+
+{
+  "is_multi_step": boolean,        // true if the task breaks down into subtasks
+  "subtasks": [string],            // list of immediate subtasks (one layer deep) or list of alternative high-level strategies -- each phrased as a prompt; empty if none
+}
+
+Do not emit any extra keys or commentary.  
+Context:
+User goal at depth 1: Create a to-do list app.
+User goal at depth 2: Design a user interface for the app
+
+Input:
+"Determine target audience"
+
+--- end prompt ---
+2025-06-11 16:22:08 [INFO] root: OllamaClient: running ['ollama', 'run', 'llama3', '# prompts/meta_prompt.txt\n\nYou are a “meta-agent.”  \nYour job is to analyze a user’s goal and determine whether it is a multi-step or multi-approach problem.  \nIf you believe it there are multiple approaches that all worth peruing, exclusively list those, do not enumerate any steps. Do not mix in apporaches and steps into the subtasks list. \nRespond strictly in JSON, with exactly these keys:\n\n{\n  "is_multi_step": boolean,        // true if the task breaks down into subtasks\n  "subtasks": [string],            // list of immediate subtasks (one layer deep) or list of alternative high-level strategies -- each phrased as a prompt; empty if none\n}\n\nDo not emit any extra keys or commentary.  \nContext:\nUser goal at depth 1: Create a to-do list app.\nUser goal at depth 2: Design a user interface for the app\n\nInput:\n"Determine target audience"\n'] (attempt 1)
+2025-06-11 16:22:09 [INFO] root: OllamaClient: running ['ollama', 'run', 'llama3', '# prompts/meta_prompt.txt\n\nYou are a “meta-agent.”  \nYour job is to analyze a user’s goal and determine whether it is a multi-step or multi-approach problem.  \nIf you believe it there are multiple approaches that all worth peruing, exclusively list those, do not enumerate any steps. Do not mix in apporaches and steps into the subtasks list. \nRespond strictly in JSON, with exactly these keys:\n\n{\n  "is_multi_step": boolean,        // true if the task breaks down into subtasks\n  "subtasks": [string],            // list of immediate subtasks (one layer deep) or list of alternative high-level strategies -- each phrased as a prompt; empty if none\n}\n\nDo not emit any extra keys or commentary.  \nContext:\nUser goal at depth 1: Create a to-do list app.\nUser goal at depth 2: Design a user interface for the app\n\nInput:\n"Determine target audience"\n'] (attempt 1)
+2025-06-11 16:22:10 [INFO] root: Identified subtasks: ['Create a to-do list app.']
+2025-06-11 16:22:10 [INFO] root: Orchestration started for goal: Research existing UI trends (depth=3)
+2025-06-11 16:22:10 [DEBUG] root: [MetaAgent] using prompt template from /Users/danirahman/Repos/LLMTreeReasoning/prompts/meta_prompt.txt
+2025-06-11 16:22:10 [DEBUG] root: [MetaAgent] filled prompt:
+# prompts/meta_prompt.txt
+
+You are a “meta-agent.”  
+Your job is to analyze a user’s goal and determine whether it is a multi-step or multi-approach problem.  
+If you believe it there are multiple approaches that all worth peruing, exclusively list those, do not enumerate any steps. Do not mix in apporaches and steps into the subtasks list. 
+Respond strictly in JSON, with exactly these keys:
+
+{
+  "is_multi_step": boolean,        // true if the task breaks down into subtasks
+  "subtasks": [string],            // list of immediate subtasks (one layer deep) or list of alternative high-level strategies -- each phrased as a prompt; empty if none
+}
+
+Do not emit any extra keys or commentary.  
+Context:
+User goal at depth 1: Create a to-do list app.
+User goal at depth 2: Design a user interface for the app
+
+Input:
+"Research existing UI trends"
+
+--- end prompt ---
+2025-06-11 16:22:10 [INFO] root: OllamaClient: running ['ollama', 'run', 'llama3', '# prompts/meta_prompt.txt\n\nYou are a “meta-agent.”  \nYour job is to analyze a user’s goal and determine whether it is a multi-step or multi-approach problem.  \nIf you believe it there are multiple approaches that all worth peruing, exclusively list those, do not enumerate any steps. Do not mix in apporaches and steps into the subtasks list. \nRespond strictly in JSON, with exactly these keys:\n\n{\n  "is_multi_step": boolean,        // true if the task breaks down into subtasks\n  "subtasks": [string],            // list of immediate subtasks (one layer deep) or list of alternative high-level strategies -- each phrased as a prompt; empty if none\n}\n\nDo not emit any extra keys or commentary.  \nContext:\nUser goal at depth 1: Create a to-do list app.\nUser goal at depth 2: Design a user interface for the app\n\nInput:\n"Research existing UI trends"\n'] (attempt 1)
+2025-06-11 16:22:11 [INFO] root: OllamaClient: running ['ollama', 'run', 'llama3', '# prompts/meta_prompt.txt\n\nYou are a “meta-agent.”  \nYour job is to analyze a user’s goal and determine whether it is a multi-step or multi-approach problem.  \nIf you believe it there are multiple approaches that all worth peruing, exclusively list those, do not enumerate any steps. Do not mix in apporaches and steps into the subtasks list. \nRespond strictly in JSON, with exactly these keys:\n\n{\n  "is_multi_step": boolean,        // true if the task breaks down into subtasks\n  "subtasks": [string],            // list of immediate subtasks (one layer deep) or list of alternative high-level strategies -- each phrased as a prompt; empty if none\n}\n\nDo not emit any extra keys or commentary.  \nContext:\nUser goal at depth 1: Create a to-do list app.\nUser goal at depth 2: Design a user interface for the app\n\nInput:\n"Research existing UI trends"\n'] (attempt 1)
+2025-06-11 16:22:12 [INFO] root: Identified subtasks: ['Create a to-do list app.']
+2025-06-11 16:22:12 [INFO] root: Orchestration started for goal: Prioritize key features (depth=3)
+2025-06-11 16:22:12 [DEBUG] root: [MetaAgent] using prompt template from /Users/danirahman/Repos/LLMTreeReasoning/prompts/meta_prompt.txt
+2025-06-11 16:22:12 [DEBUG] root: [MetaAgent] filled prompt:
+# prompts/meta_prompt.txt
+
+You are a “meta-agent.”  
+Your job is to analyze a user’s goal and determine whether it is a multi-step or multi-approach problem.  
+If you believe it there are multiple approaches that all worth peruing, exclusively list those, do not enumerate any steps. Do not mix in apporaches and steps into the subtasks list. 
+Respond strictly in JSON, with exactly these keys:
+
+{
+  "is_multi_step": boolean,        // true if the task breaks down into subtasks
+  "subtasks": [string],            // list of immediate subtasks (one layer deep) or list of alternative high-level strategies -- each phrased as a prompt; empty if none
+}
+
+Do not emit any extra keys or commentary.  
+Context:
+User goal at depth 1: Create a to-do list app.
+User goal at depth 2: Design a user interface for the app
+
+Input:
+"Prioritize key features"
+
+--- end prompt ---
+2025-06-11 16:22:12 [INFO] root: OllamaClient: running ['ollama', 'run', 'llama3', '# prompts/meta_prompt.txt\n\nYou are a “meta-agent.”  \nYour job is to analyze a user’s goal and determine whether it is a multi-step or multi-approach problem.  \nIf you believe it there are multiple approaches that all worth peruing, exclusively list those, do not enumerate any steps. Do not mix in apporaches and steps into the subtasks list. \nRespond strictly in JSON, with exactly these keys:\n\n{\n  "is_multi_step": boolean,        // true if the task breaks down into subtasks\n  "subtasks": [string],            // list of immediate subtasks (one layer deep) or list of alternative high-level strategies -- each phrased as a prompt; empty if none\n}\n\nDo not emit any extra keys or commentary.  \nContext:\nUser goal at depth 1: Create a to-do list app.\nUser goal at depth 2: Design a user interface for the app\n\nInput:\n"Prioritize key features"\n'] (attempt 1)
+2025-06-11 16:22:13 [INFO] root: OllamaClient: running ['ollama', 'run', 'llama3', '# prompts/meta_prompt.txt\n\nYou are a “meta-agent.”  \nYour job is to analyze a user’s goal and determine whether it is a multi-step or multi-approach problem.  \nIf you believe it there are multiple approaches that all worth peruing, exclusively list those, do not enumerate any steps. Do not mix in apporaches and steps into the subtasks list. \nRespond strictly in JSON, with exactly these keys:\n\n{\n  "is_multi_step": boolean,        // true if the task breaks down into subtasks\n  "subtasks": [string],            // list of immediate subtasks (one layer deep) or list of alternative high-level strategies -- each phrased as a prompt; empty if none\n}\n\nDo not emit any extra keys or commentary.  \nContext:\nUser goal at depth 1: Create a to-do list app.\nUser goal at depth 2: Design a user interface for the app\n\nInput:\n"Prioritize key features"\n'] (attempt 1)
+2025-06-11 16:22:13 [INFO] root: Identified subtasks: ['Create a to-do list app.']
+2025-06-11 16:22:13 [DEBUG] root: [ExplorerAgent] using prompt template from /Users/danirahman/Repos/LLMTreeReasoning/prompts/explore_prompt.txt
+2025-06-11 16:22:13 [DEBUG] root: [ExplorerAgent] filled prompt:
+# prompts/explore_prompt.txt
+
+You are an “explorer” agent.  
+You have been given a subtask as part of an overarching goal: your task is to complete only this subtask
+Respond strictly in JSON, with exactly these keys:
+
+{
+  "subtask": string,               // echo of the input subtask
+  "steps": [string],               // ordered list of implementation steps
+  "dependencies": [string]         // other subtasks this depends on (may be empty)
+}
+
+Do not emit any extra keys or commentary.  
+Context:
+User goal at depth 1: Create a to-do list app.
+User goal at depth 2: Decide on a programming language and development framework
+
+Subtask:
+"Java with Spring"
+
+--- end prompt ---
+2025-06-11 16:22:13 [INFO] root: OllamaClient: running ['ollama', 'run', 'llama3', '# prompts/explore_prompt.txt\n\nYou are an “explorer” agent.  \nYou have been given a subtask as part of an overarching goal: your task is to complete only this subtask\nRespond strictly in JSON, with exactly these keys:\n\n{\n  "subtask": string,               // echo of the input subtask\n  "steps": [string],               // ordered list of implementation steps\n  "dependencies": [string]         // other subtasks this depends on (may be empty)\n}\n\nDo not emit any extra keys or commentary.  \nContext:\nUser goal at depth 1: Create a to-do list app.\nUser goal at depth 2: Decide on a programming language and development framework\n\nSubtask:\n"Java with Spring"\n'] (attempt 1)
+2025-06-11 16:22:16 [INFO] root: OllamaClient: running ['ollama', 'run', 'llama3', '# prompts/explore_prompt.txt\n\nYou are an “explorer” agent.  \nYou have been given a subtask as part of an overarching goal: your task is to complete only this subtask\nRespond strictly in JSON, with exactly these keys:\n\n{\n  "subtask": string,               // echo of the input subtask\n  "steps": [string],               // ordered list of implementation steps\n  "dependencies": [string]         // other subtasks this depends on (may be empty)\n}\n\nDo not emit any extra keys or commentary.  \nContext:\nUser goal at depth 1: Create a to-do list app.\nUser goal at depth 2: Decide on a programming language and development framework\n\nSubtask:\n"Java with Spring"\n'] (attempt 1)
+2025-06-11 16:22:17 [DEBUG] root: [ExplorerAgent] using prompt template from /Users/danirahman/Repos/LLMTreeReasoning/prompts/explore_prompt.txt
+2025-06-11 16:22:17 [DEBUG] root: [ExplorerAgent] filled prompt:
+# prompts/explore_prompt.txt
+
+You are an “explorer” agent.  
+You have been given a subtask as part of an overarching goal: your task is to complete only this subtask
+Respond strictly in JSON, with exactly these keys:
+
+{
+  "subtask": string,               // echo of the input subtask
+  "steps": [string],               // ordered list of implementation steps
+  "dependencies": [string]         // other subtasks this depends on (may be empty)
+}
+
+Do not emit any extra keys or commentary.  
+Context:
+User goal at depth 1: Create a to-do list app.
+User goal at depth 2: Decide on a programming language and development framework
+
+Subtask:
+"Python with Django"
+
+--- end prompt ---
+2025-06-11 16:22:17 [INFO] root: OllamaClient: running ['ollama', 'run', 'llama3', '# prompts/explore_prompt.txt\n\nYou are an “explorer” agent.  \nYou have been given a subtask as part of an overarching goal: your task is to complete only this subtask\nRespond strictly in JSON, with exactly these keys:\n\n{\n  "subtask": string,               // echo of the input subtask\n  "steps": [string],               // ordered list of implementation steps\n  "dependencies": [string]         // other subtasks this depends on (may be empty)\n}\n\nDo not emit any extra keys or commentary.  \nContext:\nUser goal at depth 1: Create a to-do list app.\nUser goal at depth 2: Decide on a programming language and development framework\n\nSubtask:\n"Python with Django"\n'] (attempt 1)
+2025-06-11 16:22:19 [INFO] root: OllamaClient: running ['ollama', 'run', 'llama3', '# prompts/explore_prompt.txt\n\nYou are an “explorer” agent.  \nYou have been given a subtask as part of an overarching goal: your task is to complete only this subtask\nRespond strictly in JSON, with exactly these keys:\n\n{\n  "subtask": string,               // echo of the input subtask\n  "steps": [string],               // ordered list of implementation steps\n  "dependencies": [string]         // other subtasks this depends on (may be empty)\n}\n\nDo not emit any extra keys or commentary.  \nContext:\nUser goal at depth 1: Create a to-do list app.\nUser goal at depth 2: Decide on a programming language and development framework\n\nSubtask:\n"Python with Django"\n'] (attempt 1)
+2025-06-11 16:22:20 [DEBUG] root: [ExplorerAgent] using prompt template from /Users/danirahman/Repos/LLMTreeReasoning/prompts/explore_prompt.txt
+2025-06-11 16:22:20 [DEBUG] root: [ExplorerAgent] filled prompt:
+# prompts/explore_prompt.txt
+
+You are an “explorer” agent.  
+You have been given a subtask as part of an overarching goal: your task is to complete only this subtask
+Respond strictly in JSON, with exactly these keys:
+
+{
+  "subtask": string,               // echo of the input subtask
+  "steps": [string],               // ordered list of implementation steps
+  "dependencies": [string]         // other subtasks this depends on (may be empty)
+}
+
+Do not emit any extra keys or commentary.  
+Context:
+User goal at depth 1: Create a to-do list app.
+User goal at depth 2: Decide on a programming language and development framework
+
+Subtask:
+"JavaScript with React"
+
+--- end prompt ---
+2025-06-11 16:22:20 [INFO] root: OllamaClient: running ['ollama', 'run', 'llama3', '# prompts/explore_prompt.txt\n\nYou are an “explorer” agent.  \nYou have been given a subtask as part of an overarching goal: your task is to complete only this subtask\nRespond strictly in JSON, with exactly these keys:\n\n{\n  "subtask": string,               // echo of the input subtask\n  "steps": [string],               // ordered list of implementation steps\n  "dependencies": [string]         // other subtasks this depends on (may be empty)\n}\n\nDo not emit any extra keys or commentary.  \nContext:\nUser goal at depth 1: Create a to-do list app.\nUser goal at depth 2: Decide on a programming language and development framework\n\nSubtask:\n"JavaScript with React"\n'] (attempt 1)
+2025-06-11 16:22:22 [INFO] root: OllamaClient: running ['ollama', 'run', 'llama3', '# prompts/explore_prompt.txt\n\nYou are an “explorer” agent.  \nYou have been given a subtask as part of an overarching goal: your task is to complete only this subtask\nRespond strictly in JSON, with exactly these keys:\n\n{\n  "subtask": string,               // echo of the input subtask\n  "steps": [string],               // ordered list of implementation steps\n  "dependencies": [string]         // other subtasks this depends on (may be empty)\n}\n\nDo not emit any extra keys or commentary.  \nContext:\nUser goal at depth 1: Create a to-do list app.\nUser goal at depth 2: Decide on a programming language and development framework\n\nSubtask:\n"JavaScript with React"\n'] (attempt 1)
+2025-06-11 16:22:24 [INFO] root: Orchestration started for goal: Design database schema (depth=3)
+2025-06-11 16:22:24 [DEBUG] root: [MetaAgent] using prompt template from /Users/danirahman/Repos/LLMTreeReasoning/prompts/meta_prompt.txt
+2025-06-11 16:22:24 [DEBUG] root: [MetaAgent] filled prompt:
+# prompts/meta_prompt.txt
+
+You are a “meta-agent.”  
+Your job is to analyze a user’s goal and determine whether it is a multi-step or multi-approach problem.  
+If you believe it there are multiple approaches that all worth peruing, exclusively list those, do not enumerate any steps. Do not mix in apporaches and steps into the subtasks list. 
+Respond strictly in JSON, with exactly these keys:
+
+{
+  "is_multi_step": boolean,        // true if the task breaks down into subtasks
+  "subtasks": [string],            // list of immediate subtasks (one layer deep) or list of alternative high-level strategies -- each phrased as a prompt; empty if none
+}
+
+Do not emit any extra keys or commentary.  
+Context:
+User goal at depth 1: Create a to-do list app.
+User goal at depth 2: Plan for data storage and synchronization
+
+Input:
+"Design database schema"
+
+--- end prompt ---
+2025-06-11 16:22:24 [INFO] root: OllamaClient: running ['ollama', 'run', 'llama3', '# prompts/meta_prompt.txt\n\nYou are a “meta-agent.”  \nYour job is to analyze a user’s goal and determine whether it is a multi-step or multi-approach problem.  \nIf you believe it there are multiple approaches that all worth peruing, exclusively list those, do not enumerate any steps. Do not mix in apporaches and steps into the subtasks list. \nRespond strictly in JSON, with exactly these keys:\n\n{\n  "is_multi_step": boolean,        // true if the task breaks down into subtasks\n  "subtasks": [string],            // list of immediate subtasks (one layer deep) or list of alternative high-level strategies -- each phrased as a prompt; empty if none\n}\n\nDo not emit any extra keys or commentary.  \nContext:\nUser goal at depth 1: Create a to-do list app.\nUser goal at depth 2: Plan for data storage and synchronization\n\nInput:\n"Design database schema"\n'] (attempt 1)
+2025-06-11 16:22:26 [INFO] root: OllamaClient: running ['ollama', 'run', 'llama3', '# prompts/meta_prompt.txt\n\nYou are a “meta-agent.”  \nYour job is to analyze a user’s goal and determine whether it is a multi-step or multi-approach problem.  \nIf you believe it there are multiple approaches that all worth peruing, exclusively list those, do not enumerate any steps. Do not mix in apporaches and steps into the subtasks list. \nRespond strictly in JSON, with exactly these keys:\n\n{\n  "is_multi_step": boolean,        // true if the task breaks down into subtasks\n  "subtasks": [string],            // list of immediate subtasks (one layer deep) or list of alternative high-level strategies -- each phrased as a prompt; empty if none\n}\n\nDo not emit any extra keys or commentary.  \nContext:\nUser goal at depth 1: Create a to-do list app.\nUser goal at depth 2: Plan for data storage and synchronization\n\nInput:\n"Design database schema"\n'] (attempt 1)
+2025-06-11 16:22:26 [INFO] root: Identified subtasks: ['Create a to-do list app.']
+2025-06-11 16:22:26 [INFO] root: Orchestration started for goal: Choose a cloud storage solution (depth=3)
+2025-06-11 16:22:26 [DEBUG] root: [MetaAgent] using prompt template from /Users/danirahman/Repos/LLMTreeReasoning/prompts/meta_prompt.txt
+2025-06-11 16:22:26 [DEBUG] root: [MetaAgent] filled prompt:
+# prompts/meta_prompt.txt
+
+You are a “meta-agent.”  
+Your job is to analyze a user’s goal and determine whether it is a multi-step or multi-approach problem.  
+If you believe it there are multiple approaches that all worth peruing, exclusively list those, do not enumerate any steps. Do not mix in apporaches and steps into the subtasks list. 
+Respond strictly in JSON, with exactly these keys:
+
+{
+  "is_multi_step": boolean,        // true if the task breaks down into subtasks
+  "subtasks": [string],            // list of immediate subtasks (one layer deep) or list of alternative high-level strategies -- each phrased as a prompt; empty if none
+}
+
+Do not emit any extra keys or commentary.  
+Context:
+User goal at depth 1: Create a to-do list app.
+User goal at depth 2: Plan for data storage and synchronization
+
+Input:
+"Choose a cloud storage solution"
+
+--- end prompt ---
+2025-06-11 16:22:26 [INFO] root: OllamaClient: running ['ollama', 'run', 'llama3', '# prompts/meta_prompt.txt\n\nYou are a “meta-agent.”  \nYour job is to analyze a user’s goal and determine whether it is a multi-step or multi-approach problem.  \nIf you believe it there are multiple approaches that all worth peruing, exclusively list those, do not enumerate any steps. Do not mix in apporaches and steps into the subtasks list. \nRespond strictly in JSON, with exactly these keys:\n\n{\n  "is_multi_step": boolean,        // true if the task breaks down into subtasks\n  "subtasks": [string],            // list of immediate subtasks (one layer deep) or list of alternative high-level strategies -- each phrased as a prompt; empty if none\n}\n\nDo not emit any extra keys or commentary.  \nContext:\nUser goal at depth 1: Create a to-do list app.\nUser goal at depth 2: Plan for data storage and synchronization\n\nInput:\n"Choose a cloud storage solution"\n'] (attempt 1)
+2025-06-11 16:22:27 [INFO] root: OllamaClient: running ['ollama', 'run', 'llama3', '# prompts/meta_prompt.txt\n\nYou are a “meta-agent.”  \nYour job is to analyze a user’s goal and determine whether it is a multi-step or multi-approach problem.  \nIf you believe it there are multiple approaches that all worth peruing, exclusively list those, do not enumerate any steps. Do not mix in apporaches and steps into the subtasks list. \nRespond strictly in JSON, with exactly these keys:\n\n{\n  "is_multi_step": boolean,        // true if the task breaks down into subtasks\n  "subtasks": [string],            // list of immediate subtasks (one layer deep) or list of alternative high-level strategies -- each phrased as a prompt; empty if none\n}\n\nDo not emit any extra keys or commentary.  \nContext:\nUser goal at depth 1: Create a to-do list app.\nUser goal at depth 2: Plan for data storage and synchronization\n\nInput:\n"Choose a cloud storage solution"\n'] (attempt 1)
+2025-06-11 16:22:28 [INFO] root: Identified subtasks: ['Create a to-do list app.']
+2025-06-11 16:22:28 [INFO] root: Orchestration started for goal: Explore synchronization protocols (depth=3)
+2025-06-11 16:22:28 [DEBUG] root: [MetaAgent] using prompt template from /Users/danirahman/Repos/LLMTreeReasoning/prompts/meta_prompt.txt
+2025-06-11 16:22:28 [DEBUG] root: [MetaAgent] filled prompt:
+# prompts/meta_prompt.txt
+
+You are a “meta-agent.”  
+Your job is to analyze a user’s goal and determine whether it is a multi-step or multi-approach problem.  
+If you believe it there are multiple approaches that all worth peruing, exclusively list those, do not enumerate any steps. Do not mix in apporaches and steps into the subtasks list. 
+Respond strictly in JSON, with exactly these keys:
+
+{
+  "is_multi_step": boolean,        // true if the task breaks down into subtasks
+  "subtasks": [string],            // list of immediate subtasks (one layer deep) or list of alternative high-level strategies -- each phrased as a prompt; empty if none
+}
+
+Do not emit any extra keys or commentary.  
+Context:
+User goal at depth 1: Create a to-do list app.
+User goal at depth 2: Plan for data storage and synchronization
+
+Input:
+"Explore synchronization protocols"
+
+--- end prompt ---
+2025-06-11 16:22:28 [INFO] root: OllamaClient: running ['ollama', 'run', 'llama3', '# prompts/meta_prompt.txt\n\nYou are a “meta-agent.”  \nYour job is to analyze a user’s goal and determine whether it is a multi-step or multi-approach problem.  \nIf you believe it there are multiple approaches that all worth peruing, exclusively list those, do not enumerate any steps. Do not mix in apporaches and steps into the subtasks list. \nRespond strictly in JSON, with exactly these keys:\n\n{\n  "is_multi_step": boolean,        // true if the task breaks down into subtasks\n  "subtasks": [string],            // list of immediate subtasks (one layer deep) or list of alternative high-level strategies -- each phrased as a prompt; empty if none\n}\n\nDo not emit any extra keys or commentary.  \nContext:\nUser goal at depth 1: Create a to-do list app.\nUser goal at depth 2: Plan for data storage and synchronization\n\nInput:\n"Explore synchronization protocols"\n'] (attempt 1)
+2025-06-11 16:22:29 [INFO] root: OllamaClient: running ['ollama', 'run', 'llama3', '# prompts/meta_prompt.txt\n\nYou are a “meta-agent.”  \nYour job is to analyze a user’s goal and determine whether it is a multi-step or multi-approach problem.  \nIf you believe it there are multiple approaches that all worth peruing, exclusively list those, do not enumerate any steps. Do not mix in apporaches and steps into the subtasks list. \nRespond strictly in JSON, with exactly these keys:\n\n{\n  "is_multi_step": boolean,        // true if the task breaks down into subtasks\n  "subtasks": [string],            // list of immediate subtasks (one layer deep) or list of alternative high-level strategies -- each phrased as a prompt; empty if none\n}\n\nDo not emit any extra keys or commentary.  \nContext:\nUser goal at depth 1: Create a to-do list app.\nUser goal at depth 2: Plan for data storage and synchronization\n\nInput:\n"Explore synchronization protocols"\n'] (attempt 1)
+2025-06-11 16:22:30 [INFO] root: Identified subtasks: ['Create a to-do list app.']
+2025-06-11 16:22:30 [INFO] root: Orchestration started for goal: Consider offline access options (depth=3)
+2025-06-11 16:22:30 [DEBUG] root: [MetaAgent] using prompt template from /Users/danirahman/Repos/LLMTreeReasoning/prompts/meta_prompt.txt
+2025-06-11 16:22:30 [DEBUG] root: [MetaAgent] filled prompt:
+# prompts/meta_prompt.txt
+
+You are a “meta-agent.”  
+Your job is to analyze a user’s goal and determine whether it is a multi-step or multi-approach problem.  
+If you believe it there are multiple approaches that all worth peruing, exclusively list those, do not enumerate any steps. Do not mix in apporaches and steps into the subtasks list. 
+Respond strictly in JSON, with exactly these keys:
+
+{
+  "is_multi_step": boolean,        // true if the task breaks down into subtasks
+  "subtasks": [string],            // list of immediate subtasks (one layer deep) or list of alternative high-level strategies -- each phrased as a prompt; empty if none
+}
+
+Do not emit any extra keys or commentary.  
+Context:
+User goal at depth 1: Create a to-do list app.
+User goal at depth 2: Plan for data storage and synchronization
+
+Input:
+"Consider offline access options"
+
+--- end prompt ---
+2025-06-11 16:22:30 [INFO] root: OllamaClient: running ['ollama', 'run', 'llama3', '# prompts/meta_prompt.txt\n\nYou are a “meta-agent.”  \nYour job is to analyze a user’s goal and determine whether it is a multi-step or multi-approach problem.  \nIf you believe it there are multiple approaches that all worth peruing, exclusively list those, do not enumerate any steps. Do not mix in apporaches and steps into the subtasks list. \nRespond strictly in JSON, with exactly these keys:\n\n{\n  "is_multi_step": boolean,        // true if the task breaks down into subtasks\n  "subtasks": [string],            // list of immediate subtasks (one layer deep) or list of alternative high-level strategies -- each phrased as a prompt; empty if none\n}\n\nDo not emit any extra keys or commentary.  \nContext:\nUser goal at depth 1: Create a to-do list app.\nUser goal at depth 2: Plan for data storage and synchronization\n\nInput:\n"Consider offline access options"\n'] (attempt 1)
+2025-06-11 16:22:31 [INFO] root: OllamaClient: running ['ollama', 'run', 'llama3', '# prompts/meta_prompt.txt\n\nYou are a “meta-agent.”  \nYour job is to analyze a user’s goal and determine whether it is a multi-step or multi-approach problem.  \nIf you believe it there are multiple approaches that all worth peruing, exclusively list those, do not enumerate any steps. Do not mix in apporaches and steps into the subtasks list. \nRespond strictly in JSON, with exactly these keys:\n\n{\n  "is_multi_step": boolean,        // true if the task breaks down into subtasks\n  "subtasks": [string],            // list of immediate subtasks (one layer deep) or list of alternative high-level strategies -- each phrased as a prompt; empty if none\n}\n\nDo not emit any extra keys or commentary.  \nContext:\nUser goal at depth 1: Create a to-do list app.\nUser goal at depth 2: Plan for data storage and synchronization\n\nInput:\n"Consider offline access options"\n'] (attempt 1)
+2025-06-11 16:22:32 [INFO] root: Identified subtasks: ['Create a to-do list app.']
+2025-06-11 16:22:32 [DEBUG] root: [ExplorerAgent] using prompt template from /Users/danirahman/Repos/LLMTreeReasoning/prompts/explore_prompt.txt
+2025-06-11 16:22:32 [DEBUG] root: [ExplorerAgent] filled prompt:
+# prompts/explore_prompt.txt
+
+You are an “explorer” agent.  
+You have been given a subtask as part of an overarching goal: your task is to complete only this subtask
+Respond strictly in JSON, with exactly these keys:
+
+{
+  "subtask": string,               // echo of the input subtask
+  "steps": [string],               // ordered list of implementation steps
+  "dependencies": [string]         // other subtasks this depends on (may be empty)
+}
+
+Do not emit any extra keys or commentary.  
+Context:
+User goal at depth 1: Create a to-do list app.
+User goal at depth 2: Define the target audience and their needs
+User goal at depth 3: Identify key demographics
+
+Subtask:
+"Analyze user personas"
+
+--- end prompt ---
+2025-06-11 16:22:32 [INFO] root: OllamaClient: running ['ollama', 'run', 'llama3', '# prompts/explore_prompt.txt\n\nYou are an “explorer” agent.  \nYou have been given a subtask as part of an overarching goal: your task is to complete only this subtask\nRespond strictly in JSON, with exactly these keys:\n\n{\n  "subtask": string,               // echo of the input subtask\n  "steps": [string],               // ordered list of implementation steps\n  "dependencies": [string]         // other subtasks this depends on (may be empty)\n}\n\nDo not emit any extra keys or commentary.  \nContext:\nUser goal at depth 1: Create a to-do list app.\nUser goal at depth 2: Define the target audience and their needs\nUser goal at depth 3: Identify key demographics\n\nSubtask:\n"Analyze user personas"\n'] (attempt 1)
+2025-06-11 16:22:34 [INFO] root: OllamaClient: running ['ollama', 'run', 'llama3', '# prompts/explore_prompt.txt\n\nYou are an “explorer” agent.  \nYou have been given a subtask as part of an overarching goal: your task is to complete only this subtask\nRespond strictly in JSON, with exactly these keys:\n\n{\n  "subtask": string,               // echo of the input subtask\n  "steps": [string],               // ordered list of implementation steps\n  "dependencies": [string]         // other subtasks this depends on (may be empty)\n}\n\nDo not emit any extra keys or commentary.  \nContext:\nUser goal at depth 1: Create a to-do list app.\nUser goal at depth 2: Define the target audience and their needs\nUser goal at depth 3: Identify key demographics\n\nSubtask:\n"Analyze user personas"\n'] (attempt 1)
+2025-06-11 16:22:36 [DEBUG] root: [ExplorerAgent] using prompt template from /Users/danirahman/Repos/LLMTreeReasoning/prompts/explore_prompt.txt
+2025-06-11 16:22:36 [DEBUG] root: [ExplorerAgent] filled prompt:
+# prompts/explore_prompt.txt
+
+You are an “explorer” agent.  
+You have been given a subtask as part of an overarching goal: your task is to complete only this subtask
+Respond strictly in JSON, with exactly these keys:
+
+{
+  "subtask": string,               // echo of the input subtask
+  "steps": [string],               // ordered list of implementation steps
+  "dependencies": [string]         // other subtasks this depends on (may be empty)
+}
+
+Do not emit any extra keys or commentary.  
+Context:
+User goal at depth 1: Create a to-do list app.
+User goal at depth 2: Define the target audience and their needs
+User goal at depth 3: Identify key demographics
+
+Subtask:
+"Conduct market research"
+
+--- end prompt ---
+2025-06-11 16:22:36 [INFO] root: OllamaClient: running ['ollama', 'run', 'llama3', '# prompts/explore_prompt.txt\n\nYou are an “explorer” agent.  \nYou have been given a subtask as part of an overarching goal: your task is to complete only this subtask\nRespond strictly in JSON, with exactly these keys:\n\n{\n  "subtask": string,               // echo of the input subtask\n  "steps": [string],               // ordered list of implementation steps\n  "dependencies": [string]         // other subtasks this depends on (may be empty)\n}\n\nDo not emit any extra keys or commentary.  \nContext:\nUser goal at depth 1: Create a to-do list app.\nUser goal at depth 2: Define the target audience and their needs\nUser goal at depth 3: Identify key demographics\n\nSubtask:\n"Conduct market research"\n'] (attempt 1)
+2025-06-11 16:22:38 [INFO] root: OllamaClient: running ['ollama', 'run', 'llama3', '# prompts/explore_prompt.txt\n\nYou are an “explorer” agent.  \nYou have been given a subtask as part of an overarching goal: your task is to complete only this subtask\nRespond strictly in JSON, with exactly these keys:\n\n{\n  "subtask": string,               // echo of the input subtask\n  "steps": [string],               // ordered list of implementation steps\n  "dependencies": [string]         // other subtasks this depends on (may be empty)\n}\n\nDo not emit any extra keys or commentary.  \nContext:\nUser goal at depth 1: Create a to-do list app.\nUser goal at depth 2: Define the target audience and their needs\nUser goal at depth 3: Identify key demographics\n\nSubtask:\n"Conduct market research"\n'] (attempt 1)
+2025-06-11 16:22:40 [DEBUG] root: [ExplorerAgent] using prompt template from /Users/danirahman/Repos/LLMTreeReasoning/prompts/explore_prompt.txt
+2025-06-11 16:22:40 [DEBUG] root: [ExplorerAgent] filled prompt:
+# prompts/explore_prompt.txt
+
+You are an “explorer” agent.  
+You have been given a subtask as part of an overarching goal: your task is to complete only this subtask
+Respond strictly in JSON, with exactly these keys:
+
+{
+  "subtask": string,               // echo of the input subtask
+  "steps": [string],               // ordered list of implementation steps
+  "dependencies": [string]         // other subtasks this depends on (may be empty)
+}
+
+Do not emit any extra keys or commentary.  
+Context:
+User goal at depth 1: Create a to-do list app.
+User goal at depth 2: Define the target audience and their needs
+User goal at depth 3: Determine functional requirements for users with different needs
+
+Subtask:
+"Define the primary user group"
+
+--- end prompt ---
+2025-06-11 16:22:40 [INFO] root: OllamaClient: running ['ollama', 'run', 'llama3', '# prompts/explore_prompt.txt\n\nYou are an “explorer” agent.  \nYou have been given a subtask as part of an overarching goal: your task is to complete only this subtask\nRespond strictly in JSON, with exactly these keys:\n\n{\n  "subtask": string,               // echo of the input subtask\n  "steps": [string],               // ordered list of implementation steps\n  "dependencies": [string]         // other subtasks this depends on (may be empty)\n}\n\nDo not emit any extra keys or commentary.  \nContext:\nUser goal at depth 1: Create a to-do list app.\nUser goal at depth 2: Define the target audience and their needs\nUser goal at depth 3: Determine functional requirements for users with different needs\n\nSubtask:\n"Define the primary user group"\n'] (attempt 1)
+2025-06-11 16:22:42 [INFO] root: OllamaClient: running ['ollama', 'run', 'llama3', '# prompts/explore_prompt.txt\n\nYou are an “explorer” agent.  \nYou have been given a subtask as part of an overarching goal: your task is to complete only this subtask\nRespond strictly in JSON, with exactly these keys:\n\n{\n  "subtask": string,               // echo of the input subtask\n  "steps": [string],               // ordered list of implementation steps\n  "dependencies": [string]         // other subtasks this depends on (may be empty)\n}\n\nDo not emit any extra keys or commentary.  \nContext:\nUser goal at depth 1: Create a to-do list app.\nUser goal at depth 2: Define the target audience and their needs\nUser goal at depth 3: Determine functional requirements for users with different needs\n\nSubtask:\n"Define the primary user group"\n'] (attempt 1)
+2025-06-11 16:22:43 [DEBUG] root: [ExplorerAgent] using prompt template from /Users/danirahman/Repos/LLMTreeReasoning/prompts/explore_prompt.txt
+2025-06-11 16:22:43 [DEBUG] root: [ExplorerAgent] filled prompt:
+# prompts/explore_prompt.txt
+
+You are an “explorer” agent.  
+You have been given a subtask as part of an overarching goal: your task is to complete only this subtask
+Respond strictly in JSON, with exactly these keys:
+
+{
+  "subtask": string,               // echo of the input subtask
+  "steps": [string],               // ordered list of implementation steps
+  "dependencies": [string]         // other subtasks this depends on (may be empty)
+}
+
+Do not emit any extra keys or commentary.  
+Context:
+User goal at depth 1: Create a to-do list app.
+User goal at depth 2: Define the target audience and their needs
+User goal at depth 3: Determine functional requirements for users with different needs
+
+Subtask:
+"Identify unique needs of each user segment"
+
+--- end prompt ---
+2025-06-11 16:22:43 [INFO] root: OllamaClient: running ['ollama', 'run', 'llama3', '# prompts/explore_prompt.txt\n\nYou are an “explorer” agent.  \nYou have been given a subtask as part of an overarching goal: your task is to complete only this subtask\nRespond strictly in JSON, with exactly these keys:\n\n{\n  "subtask": string,               // echo of the input subtask\n  "steps": [string],               // ordered list of implementation steps\n  "dependencies": [string]         // other subtasks this depends on (may be empty)\n}\n\nDo not emit any extra keys or commentary.  \nContext:\nUser goal at depth 1: Create a to-do list app.\nUser goal at depth 2: Define the target audience and their needs\nUser goal at depth 3: Determine functional requirements for users with different needs\n\nSubtask:\n"Identify unique needs of each user segment"\n'] (attempt 1)
+2025-06-11 16:22:45 [INFO] root: OllamaClient: running ['ollama', 'run', 'llama3', '# prompts/explore_prompt.txt\n\nYou are an “explorer” agent.  \nYou have been given a subtask as part of an overarching goal: your task is to complete only this subtask\nRespond strictly in JSON, with exactly these keys:\n\n{\n  "subtask": string,               // echo of the input subtask\n  "steps": [string],               // ordered list of implementation steps\n  "dependencies": [string]         // other subtasks this depends on (may be empty)\n}\n\nDo not emit any extra keys or commentary.  \nContext:\nUser goal at depth 1: Create a to-do list app.\nUser goal at depth 2: Define the target audience and their needs\nUser goal at depth 3: Determine functional requirements for users with different needs\n\nSubtask:\n"Identify unique needs of each user segment"\n'] (attempt 1)
+2025-06-11 16:22:47 [DEBUG] root: [ExplorerAgent] using prompt template from /Users/danirahman/Repos/LLMTreeReasoning/prompts/explore_prompt.txt
+2025-06-11 16:22:47 [DEBUG] root: [ExplorerAgent] filled prompt:
+# prompts/explore_prompt.txt
+
+You are an “explorer” agent.  
+You have been given a subtask as part of an overarching goal: your task is to complete only this subtask
+Respond strictly in JSON, with exactly these keys:
+
+{
+  "subtask": string,               // echo of the input subtask
+  "steps": [string],               // ordered list of implementation steps
+  "dependencies": [string]         // other subtasks this depends on (may be empty)
+}
+
+Do not emit any extra keys or commentary.  
+Context:
+User goal at depth 1: Create a to-do list app.
+User goal at depth 2: Define the target audience and their needs
+User goal at depth 3: Determine functional requirements for users with different needs
+
+Subtask:
+"Analyze how these needs impact app functionality and features"
+
+--- end prompt ---
+2025-06-11 16:22:47 [INFO] root: OllamaClient: running ['ollama', 'run', 'llama3', '# prompts/explore_prompt.txt\n\nYou are an “explorer” agent.  \nYou have been given a subtask as part of an overarching goal: your task is to complete only this subtask\nRespond strictly in JSON, with exactly these keys:\n\n{\n  "subtask": string,               // echo of the input subtask\n  "steps": [string],               // ordered list of implementation steps\n  "dependencies": [string]         // other subtasks this depends on (may be empty)\n}\n\nDo not emit any extra keys or commentary.  \nContext:\nUser goal at depth 1: Create a to-do list app.\nUser goal at depth 2: Define the target audience and their needs\nUser goal at depth 3: Determine functional requirements for users with different needs\n\nSubtask:\n"Analyze how these needs impact app functionality and features"\n'] (attempt 1)
+2025-06-11 16:22:49 [INFO] root: OllamaClient: running ['ollama', 'run', 'llama3', '# prompts/explore_prompt.txt\n\nYou are an “explorer” agent.  \nYou have been given a subtask as part of an overarching goal: your task is to complete only this subtask\nRespond strictly in JSON, with exactly these keys:\n\n{\n  "subtask": string,               // echo of the input subtask\n  "steps": [string],               // ordered list of implementation steps\n  "dependencies": [string]         // other subtasks this depends on (may be empty)\n}\n\nDo not emit any extra keys or commentary.  \nContext:\nUser goal at depth 1: Create a to-do list app.\nUser goal at depth 2: Define the target audience and their needs\nUser goal at depth 3: Determine functional requirements for users with different needs\n\nSubtask:\n"Analyze how these needs impact app functionality and features"\n'] (attempt 1)
+2025-06-11 16:22:52 [DEBUG] root: [ExplorerAgent] using prompt template from /Users/danirahman/Repos/LLMTreeReasoning/prompts/explore_prompt.txt
+2025-06-11 16:22:52 [DEBUG] root: [ExplorerAgent] filled prompt:
+# prompts/explore_prompt.txt
+
+You are an “explorer” agent.  
+You have been given a subtask as part of an overarching goal: your task is to complete only this subtask
+Respond strictly in JSON, with exactly these keys:
+
+{
+  "subtask": string,               // echo of the input subtask
+  "steps": [string],               // ordered list of implementation steps
+  "dependencies": [string]         // other subtasks this depends on (may be empty)
+}
+
+Do not emit any extra keys or commentary.  
+Context:
+User goal at depth 1: Create a to-do list app.
+User goal at depth 2: Design a user interface for the app
+User goal at depth 3: Determine target audience
+
+Subtask:
+"Analyze existing to-do list apps"
+
+--- end prompt ---
+2025-06-11 16:22:52 [INFO] root: OllamaClient: running ['ollama', 'run', 'llama3', '# prompts/explore_prompt.txt\n\nYou are an “explorer” agent.  \nYou have been given a subtask as part of an overarching goal: your task is to complete only this subtask\nRespond strictly in JSON, with exactly these keys:\n\n{\n  "subtask": string,               // echo of the input subtask\n  "steps": [string],               // ordered list of implementation steps\n  "dependencies": [string]         // other subtasks this depends on (may be empty)\n}\n\nDo not emit any extra keys or commentary.  \nContext:\nUser goal at depth 1: Create a to-do list app.\nUser goal at depth 2: Design a user interface for the app\nUser goal at depth 3: Determine target audience\n\nSubtask:\n"Analyze existing to-do list apps"\n'] (attempt 1)
+2025-06-11 16:22:53 [INFO] root: OllamaClient: running ['ollama', 'run', 'llama3', '# prompts/explore_prompt.txt\n\nYou are an “explorer” agent.  \nYou have been given a subtask as part of an overarching goal: your task is to complete only this subtask\nRespond strictly in JSON, with exactly these keys:\n\n{\n  "subtask": string,               // echo of the input subtask\n  "steps": [string],               // ordered list of implementation steps\n  "dependencies": [string]         // other subtasks this depends on (may be empty)\n}\n\nDo not emit any extra keys or commentary.  \nContext:\nUser goal at depth 1: Create a to-do list app.\nUser goal at depth 2: Design a user interface for the app\nUser goal at depth 3: Determine target audience\n\nSubtask:\n"Analyze existing to-do list apps"\n'] (attempt 1)
+2025-06-11 16:22:55 [DEBUG] root: [ExplorerAgent] using prompt template from /Users/danirahman/Repos/LLMTreeReasoning/prompts/explore_prompt.txt
+2025-06-11 16:22:55 [DEBUG] root: [ExplorerAgent] filled prompt:
+# prompts/explore_prompt.txt
+
+You are an “explorer” agent.  
+You have been given a subtask as part of an overarching goal: your task is to complete only this subtask
+Respond strictly in JSON, with exactly these keys:
+
+{
+  "subtask": string,               // echo of the input subtask
+  "steps": [string],               // ordered list of implementation steps
+  "dependencies": [string]         // other subtasks this depends on (may be empty)
+}
+
+Do not emit any extra keys or commentary.  
+Context:
+User goal at depth 1: Create a to-do list app.
+User goal at depth 2: Design a user interface for the app
+User goal at depth 3: Determine target audience
+
+Subtask:
+"Research user behavior and needs"
+
+--- end prompt ---
+2025-06-11 16:22:55 [INFO] root: OllamaClient: running ['ollama', 'run', 'llama3', '# prompts/explore_prompt.txt\n\nYou are an “explorer” agent.  \nYou have been given a subtask as part of an overarching goal: your task is to complete only this subtask\nRespond strictly in JSON, with exactly these keys:\n\n{\n  "subtask": string,               // echo of the input subtask\n  "steps": [string],               // ordered list of implementation steps\n  "dependencies": [string]         // other subtasks this depends on (may be empty)\n}\n\nDo not emit any extra keys or commentary.  \nContext:\nUser goal at depth 1: Create a to-do list app.\nUser goal at depth 2: Design a user interface for the app\nUser goal at depth 3: Determine target audience\n\nSubtask:\n"Research user behavior and needs"\n'] (attempt 1)
+2025-06-11 16:22:57 [INFO] root: OllamaClient: running ['ollama', 'run', 'llama3', '# prompts/explore_prompt.txt\n\nYou are an “explorer” agent.  \nYou have been given a subtask as part of an overarching goal: your task is to complete only this subtask\nRespond strictly in JSON, with exactly these keys:\n\n{\n  "subtask": string,               // echo of the input subtask\n  "steps": [string],               // ordered list of implementation steps\n  "dependencies": [string]         // other subtasks this depends on (may be empty)\n}\n\nDo not emit any extra keys or commentary.  \nContext:\nUser goal at depth 1: Create a to-do list app.\nUser goal at depth 2: Design a user interface for the app\nUser goal at depth 3: Determine target audience\n\nSubtask:\n"Research user behavior and needs"\n'] (attempt 1)
+2025-06-11 16:22:59 [DEBUG] root: [ExplorerAgent] using prompt template from /Users/danirahman/Repos/LLMTreeReasoning/prompts/explore_prompt.txt
+2025-06-11 16:22:59 [DEBUG] root: [ExplorerAgent] filled prompt:
+# prompts/explore_prompt.txt
+
+You are an “explorer” agent.  
+You have been given a subtask as part of an overarching goal: your task is to complete only this subtask
+Respond strictly in JSON, with exactly these keys:
+
+{
+  "subtask": string,               // echo of the input subtask
+  "steps": [string],               // ordered list of implementation steps
+  "dependencies": [string]         // other subtasks this depends on (may be empty)
+}
+
+Do not emit any extra keys or commentary.  
+Context:
+User goal at depth 1: Create a to-do list app.
+User goal at depth 2: Design a user interface for the app
+User goal at depth 3: Research existing UI trends
+
+Subtask:
+"Design a minimalist UI"
+
+--- end prompt ---
+2025-06-11 16:22:59 [INFO] root: OllamaClient: running ['ollama', 'run', 'llama3', '# prompts/explore_prompt.txt\n\nYou are an “explorer” agent.  \nYou have been given a subtask as part of an overarching goal: your task is to complete only this subtask\nRespond strictly in JSON, with exactly these keys:\n\n{\n  "subtask": string,               // echo of the input subtask\n  "steps": [string],               // ordered list of implementation steps\n  "dependencies": [string]         // other subtasks this depends on (may be empty)\n}\n\nDo not emit any extra keys or commentary.  \nContext:\nUser goal at depth 1: Create a to-do list app.\nUser goal at depth 2: Design a user interface for the app\nUser goal at depth 3: Research existing UI trends\n\nSubtask:\n"Design a minimalist UI"\n'] (attempt 1)
+2025-06-11 16:23:01 [INFO] root: OllamaClient: running ['ollama', 'run', 'llama3', '# prompts/explore_prompt.txt\n\nYou are an “explorer” agent.  \nYou have been given a subtask as part of an overarching goal: your task is to complete only this subtask\nRespond strictly in JSON, with exactly these keys:\n\n{\n  "subtask": string,               // echo of the input subtask\n  "steps": [string],               // ordered list of implementation steps\n  "dependencies": [string]         // other subtasks this depends on (may be empty)\n}\n\nDo not emit any extra keys or commentary.  \nContext:\nUser goal at depth 1: Create a to-do list app.\nUser goal at depth 2: Design a user interface for the app\nUser goal at depth 3: Research existing UI trends\n\nSubtask:\n"Design a minimalist UI"\n'] (attempt 1)
+2025-06-11 16:23:02 [DEBUG] root: [ExplorerAgent] using prompt template from /Users/danirahman/Repos/LLMTreeReasoning/prompts/explore_prompt.txt
+2025-06-11 16:23:02 [DEBUG] root: [ExplorerAgent] filled prompt:
+# prompts/explore_prompt.txt
+
+You are an “explorer” agent.  
+You have been given a subtask as part of an overarching goal: your task is to complete only this subtask
+Respond strictly in JSON, with exactly these keys:
+
+{
+  "subtask": string,               // echo of the input subtask
+  "steps": [string],               // ordered list of implementation steps
+  "dependencies": [string]         // other subtasks this depends on (may be empty)
+}
+
+Do not emit any extra keys or commentary.  
+Context:
+User goal at depth 1: Create a to-do list app.
+User goal at depth 2: Design a user interface for the app
+User goal at depth 3: Research existing UI trends
+
+Subtask:
+"Explore interactive elements"
+
+--- end prompt ---
+2025-06-11 16:23:02 [INFO] root: OllamaClient: running ['ollama', 'run', 'llama3', '# prompts/explore_prompt.txt\n\nYou are an “explorer” agent.  \nYou have been given a subtask as part of an overarching goal: your task is to complete only this subtask\nRespond strictly in JSON, with exactly these keys:\n\n{\n  "subtask": string,               // echo of the input subtask\n  "steps": [string],               // ordered list of implementation steps\n  "dependencies": [string]         // other subtasks this depends on (may be empty)\n}\n\nDo not emit any extra keys or commentary.  \nContext:\nUser goal at depth 1: Create a to-do list app.\nUser goal at depth 2: Design a user interface for the app\nUser goal at depth 3: Research existing UI trends\n\nSubtask:\n"Explore interactive elements"\n'] (attempt 1)
+2025-06-11 16:23:04 [INFO] root: OllamaClient: running ['ollama', 'run', 'llama3', '# prompts/explore_prompt.txt\n\nYou are an “explorer” agent.  \nYou have been given a subtask as part of an overarching goal: your task is to complete only this subtask\nRespond strictly in JSON, with exactly these keys:\n\n{\n  "subtask": string,               // echo of the input subtask\n  "steps": [string],               // ordered list of implementation steps\n  "dependencies": [string]         // other subtasks this depends on (may be empty)\n}\n\nDo not emit any extra keys or commentary.  \nContext:\nUser goal at depth 1: Create a to-do list app.\nUser goal at depth 2: Design a user interface for the app\nUser goal at depth 3: Research existing UI trends\n\nSubtask:\n"Explore interactive elements"\n'] (attempt 1)
+2025-06-11 16:23:06 [DEBUG] root: [ExplorerAgent] using prompt template from /Users/danirahman/Repos/LLMTreeReasoning/prompts/explore_prompt.txt
+2025-06-11 16:23:06 [DEBUG] root: [ExplorerAgent] filled prompt:
+# prompts/explore_prompt.txt
+
+You are an “explorer” agent.  
+You have been given a subtask as part of an overarching goal: your task is to complete only this subtask
+Respond strictly in JSON, with exactly these keys:
+
+{
+  "subtask": string,               // echo of the input subtask
+  "steps": [string],               // ordered list of implementation steps
+  "dependencies": [string]         // other subtasks this depends on (may be empty)
+}
+
+Do not emit any extra keys or commentary.  
+Context:
+User goal at depth 1: Create a to-do list app.
+User goal at depth 2: Design a user interface for the app
+User goal at depth 3: Prioritize key features
+
+Subtask:
+"Define what makes a feature 'key'"
+
+--- end prompt ---
+2025-06-11 16:23:06 [INFO] root: OllamaClient: running ['ollama', 'run', 'llama3', '# prompts/explore_prompt.txt\n\nYou are an “explorer” agent.  \nYou have been given a subtask as part of an overarching goal: your task is to complete only this subtask\nRespond strictly in JSON, with exactly these keys:\n\n{\n  "subtask": string,               // echo of the input subtask\n  "steps": [string],               // ordered list of implementation steps\n  "dependencies": [string]         // other subtasks this depends on (may be empty)\n}\n\nDo not emit any extra keys or commentary.  \nContext:\nUser goal at depth 1: Create a to-do list app.\nUser goal at depth 2: Design a user interface for the app\nUser goal at depth 3: Prioritize key features\n\nSubtask:\n"Define what makes a feature \'key\'"\n'] (attempt 1)
+2025-06-11 16:23:08 [INFO] root: OllamaClient: running ['ollama', 'run', 'llama3', '# prompts/explore_prompt.txt\n\nYou are an “explorer” agent.  \nYou have been given a subtask as part of an overarching goal: your task is to complete only this subtask\nRespond strictly in JSON, with exactly these keys:\n\n{\n  "subtask": string,               // echo of the input subtask\n  "steps": [string],               // ordered list of implementation steps\n  "dependencies": [string]         // other subtasks this depends on (may be empty)\n}\n\nDo not emit any extra keys or commentary.  \nContext:\nUser goal at depth 1: Create a to-do list app.\nUser goal at depth 2: Design a user interface for the app\nUser goal at depth 3: Prioritize key features\n\nSubtask:\n"Define what makes a feature \'key\'"\n'] (attempt 1)
+2025-06-11 16:23:10 [DEBUG] root: [ExplorerAgent] using prompt template from /Users/danirahman/Repos/LLMTreeReasoning/prompts/explore_prompt.txt
+2025-06-11 16:23:10 [DEBUG] root: [ExplorerAgent] filled prompt:
+# prompts/explore_prompt.txt
+
+You are an “explorer” agent.  
+You have been given a subtask as part of an overarching goal: your task is to complete only this subtask
+Respond strictly in JSON, with exactly these keys:
+
+{
+  "subtask": string,               // echo of the input subtask
+  "steps": [string],               // ordered list of implementation steps
+  "dependencies": [string]         // other subtasks this depends on (may be empty)
+}
+
+Do not emit any extra keys or commentary.  
+Context:
+User goal at depth 1: Create a to-do list app.
+User goal at depth 2: Design a user interface for the app
+User goal at depth 3: Prioritize key features
+
+Subtask:
+"Identify potential users and their needs"
+
+--- end prompt ---
+2025-06-11 16:23:10 [INFO] root: OllamaClient: running ['ollama', 'run', 'llama3', '# prompts/explore_prompt.txt\n\nYou are an “explorer” agent.  \nYou have been given a subtask as part of an overarching goal: your task is to complete only this subtask\nRespond strictly in JSON, with exactly these keys:\n\n{\n  "subtask": string,               // echo of the input subtask\n  "steps": [string],               // ordered list of implementation steps\n  "dependencies": [string]         // other subtasks this depends on (may be empty)\n}\n\nDo not emit any extra keys or commentary.  \nContext:\nUser goal at depth 1: Create a to-do list app.\nUser goal at depth 2: Design a user interface for the app\nUser goal at depth 3: Prioritize key features\n\nSubtask:\n"Identify potential users and their needs"\n'] (attempt 1)
+2025-06-11 16:23:12 [INFO] root: OllamaClient: running ['ollama', 'run', 'llama3', '# prompts/explore_prompt.txt\n\nYou are an “explorer” agent.  \nYou have been given a subtask as part of an overarching goal: your task is to complete only this subtask\nRespond strictly in JSON, with exactly these keys:\n\n{\n  "subtask": string,               // echo of the input subtask\n  "steps": [string],               // ordered list of implementation steps\n  "dependencies": [string]         // other subtasks this depends on (may be empty)\n}\n\nDo not emit any extra keys or commentary.  \nContext:\nUser goal at depth 1: Create a to-do list app.\nUser goal at depth 2: Design a user interface for the app\nUser goal at depth 3: Prioritize key features\n\nSubtask:\n"Identify potential users and their needs"\n'] (attempt 1)
+2025-06-11 16:23:14 [DEBUG] root: [ExplorerAgent] using prompt template from /Users/danirahman/Repos/LLMTreeReasoning/prompts/explore_prompt.txt
+2025-06-11 16:23:14 [DEBUG] root: [ExplorerAgent] filled prompt:
+# prompts/explore_prompt.txt
+
+You are an “explorer” agent.  
+You have been given a subtask as part of an overarching goal: your task is to complete only this subtask
+Respond strictly in JSON, with exactly these keys:
+
+{
+  "subtask": string,               // echo of the input subtask
+  "steps": [string],               // ordered list of implementation steps
+  "dependencies": [string]         // other subtasks this depends on (may be empty)
+}
+
+Do not emit any extra keys or commentary.  
+Context:
+User goal at depth 1: Create a to-do list app.
+User goal at depth 2: Plan for data storage and synchronization
+User goal at depth 3: Design database schema
+
+Subtask:
+"Plan for data storage"
+
+--- end prompt ---
+2025-06-11 16:23:14 [INFO] root: OllamaClient: running ['ollama', 'run', 'llama3', '# prompts/explore_prompt.txt\n\nYou are an “explorer” agent.  \nYou have been given a subtask as part of an overarching goal: your task is to complete only this subtask\nRespond strictly in JSON, with exactly these keys:\n\n{\n  "subtask": string,               // echo of the input subtask\n  "steps": [string],               // ordered list of implementation steps\n  "dependencies": [string]         // other subtasks this depends on (may be empty)\n}\n\nDo not emit any extra keys or commentary.  \nContext:\nUser goal at depth 1: Create a to-do list app.\nUser goal at depth 2: Plan for data storage and synchronization\nUser goal at depth 3: Design database schema\n\nSubtask:\n"Plan for data storage"\n'] (attempt 1)
+2025-06-11 16:23:16 [INFO] root: OllamaClient: running ['ollama', 'run', 'llama3', '# prompts/explore_prompt.txt\n\nYou are an “explorer” agent.  \nYou have been given a subtask as part of an overarching goal: your task is to complete only this subtask\nRespond strictly in JSON, with exactly these keys:\n\n{\n  "subtask": string,               // echo of the input subtask\n  "steps": [string],               // ordered list of implementation steps\n  "dependencies": [string]         // other subtasks this depends on (may be empty)\n}\n\nDo not emit any extra keys or commentary.  \nContext:\nUser goal at depth 1: Create a to-do list app.\nUser goal at depth 2: Plan for data storage and synchronization\nUser goal at depth 3: Design database schema\n\nSubtask:\n"Plan for data storage"\n'] (attempt 1)
+2025-06-11 16:23:17 [DEBUG] root: [ExplorerAgent] using prompt template from /Users/danirahman/Repos/LLMTreeReasoning/prompts/explore_prompt.txt
+2025-06-11 16:23:17 [DEBUG] root: [ExplorerAgent] filled prompt:
+# prompts/explore_prompt.txt
+
+You are an “explorer” agent.  
+You have been given a subtask as part of an overarching goal: your task is to complete only this subtask
+Respond strictly in JSON, with exactly these keys:
+
+{
+  "subtask": string,               // echo of the input subtask
+  "steps": [string],               // ordered list of implementation steps
+  "dependencies": [string]         // other subtasks this depends on (may be empty)
+}
+
+Do not emit any extra keys or commentary.  
+Context:
+User goal at depth 1: Create a to-do list app.
+User goal at depth 2: Plan for data storage and synchronization
+User goal at depth 3: Design database schema
+
+Subtask:
+"Consider synchronization options"
+
+--- end prompt ---
+2025-06-11 16:23:17 [INFO] root: OllamaClient: running ['ollama', 'run', 'llama3', '# prompts/explore_prompt.txt\n\nYou are an “explorer” agent.  \nYou have been given a subtask as part of an overarching goal: your task is to complete only this subtask\nRespond strictly in JSON, with exactly these keys:\n\n{\n  "subtask": string,               // echo of the input subtask\n  "steps": [string],               // ordered list of implementation steps\n  "dependencies": [string]         // other subtasks this depends on (may be empty)\n}\n\nDo not emit any extra keys or commentary.  \nContext:\nUser goal at depth 1: Create a to-do list app.\nUser goal at depth 2: Plan for data storage and synchronization\nUser goal at depth 3: Design database schema\n\nSubtask:\n"Consider synchronization options"\n'] (attempt 1)
+2025-06-11 16:23:19 [INFO] root: OllamaClient: running ['ollama', 'run', 'llama3', '# prompts/explore_prompt.txt\n\nYou are an “explorer” agent.  \nYou have been given a subtask as part of an overarching goal: your task is to complete only this subtask\nRespond strictly in JSON, with exactly these keys:\n\n{\n  "subtask": string,               // echo of the input subtask\n  "steps": [string],               // ordered list of implementation steps\n  "dependencies": [string]         // other subtasks this depends on (may be empty)\n}\n\nDo not emit any extra keys or commentary.  \nContext:\nUser goal at depth 1: Create a to-do list app.\nUser goal at depth 2: Plan for data storage and synchronization\nUser goal at depth 3: Design database schema\n\nSubtask:\n"Consider synchronization options"\n'] (attempt 1)
+2025-06-11 16:23:21 [DEBUG] root: [ExplorerAgent] using prompt template from /Users/danirahman/Repos/LLMTreeReasoning/prompts/explore_prompt.txt
+2025-06-11 16:23:21 [DEBUG] root: [ExplorerAgent] filled prompt:
+# prompts/explore_prompt.txt
+
+You are an “explorer” agent.  
+You have been given a subtask as part of an overarching goal: your task is to complete only this subtask
+Respond strictly in JSON, with exactly these keys:
+
+{
+  "subtask": string,               // echo of the input subtask
+  "steps": [string],               // ordered list of implementation steps
+  "dependencies": [string]         // other subtasks this depends on (may be empty)
+}
+
+Do not emit any extra keys or commentary.  
+Context:
+User goal at depth 1: Create a to-do list app.
+User goal at depth 2: Plan for data storage and synchronization
+User goal at depth 3: Choose a cloud storage solution
+
+Subtask:
+"Evaluate options for scalable data storage"
+
+--- end prompt ---
+2025-06-11 16:23:21 [INFO] root: OllamaClient: running ['ollama', 'run', 'llama3', '# prompts/explore_prompt.txt\n\nYou are an “explorer” agent.  \nYou have been given a subtask as part of an overarching goal: your task is to complete only this subtask\nRespond strictly in JSON, with exactly these keys:\n\n{\n  "subtask": string,               // echo of the input subtask\n  "steps": [string],               // ordered list of implementation steps\n  "dependencies": [string]         // other subtasks this depends on (may be empty)\n}\n\nDo not emit any extra keys or commentary.  \nContext:\nUser goal at depth 1: Create a to-do list app.\nUser goal at depth 2: Plan for data storage and synchronization\nUser goal at depth 3: Choose a cloud storage solution\n\nSubtask:\n"Evaluate options for scalable data storage"\n'] (attempt 1)
+2025-06-11 16:23:23 [INFO] root: OllamaClient: running ['ollama', 'run', 'llama3', '# prompts/explore_prompt.txt\n\nYou are an “explorer” agent.  \nYou have been given a subtask as part of an overarching goal: your task is to complete only this subtask\nRespond strictly in JSON, with exactly these keys:\n\n{\n  "subtask": string,               // echo of the input subtask\n  "steps": [string],               // ordered list of implementation steps\n  "dependencies": [string]         // other subtasks this depends on (may be empty)\n}\n\nDo not emit any extra keys or commentary.  \nContext:\nUser goal at depth 1: Create a to-do list app.\nUser goal at depth 2: Plan for data storage and synchronization\nUser goal at depth 3: Choose a cloud storage solution\n\nSubtask:\n"Evaluate options for scalable data storage"\n'] (attempt 1)
+2025-06-11 16:23:25 [DEBUG] root: [ExplorerAgent] using prompt template from /Users/danirahman/Repos/LLMTreeReasoning/prompts/explore_prompt.txt
+2025-06-11 16:23:25 [DEBUG] root: [ExplorerAgent] filled prompt:
+# prompts/explore_prompt.txt
+
+You are an “explorer” agent.  
+You have been given a subtask as part of an overarching goal: your task is to complete only this subtask
+Respond strictly in JSON, with exactly these keys:
+
+{
+  "subtask": string,               // echo of the input subtask
+  "steps": [string],               // ordered list of implementation steps
+  "dependencies": [string]         // other subtasks this depends on (may be empty)
+}
+
+Do not emit any extra keys or commentary.  
+Context:
+User goal at depth 1: Create a to-do list app.
+User goal at depth 2: Plan for data storage and synchronization
+User goal at depth 3: Choose a cloud storage solution
+
+Subtask:
+"Consider APIs for synchronization with other devices"
+
+--- end prompt ---
+2025-06-11 16:23:25 [INFO] root: OllamaClient: running ['ollama', 'run', 'llama3', '# prompts/explore_prompt.txt\n\nYou are an “explorer” agent.  \nYou have been given a subtask as part of an overarching goal: your task is to complete only this subtask\nRespond strictly in JSON, with exactly these keys:\n\n{\n  "subtask": string,               // echo of the input subtask\n  "steps": [string],               // ordered list of implementation steps\n  "dependencies": [string]         // other subtasks this depends on (may be empty)\n}\n\nDo not emit any extra keys or commentary.  \nContext:\nUser goal at depth 1: Create a to-do list app.\nUser goal at depth 2: Plan for data storage and synchronization\nUser goal at depth 3: Choose a cloud storage solution\n\nSubtask:\n"Consider APIs for synchronization with other devices"\n'] (attempt 1)
+2025-06-11 16:23:26 [INFO] root: OllamaClient: running ['ollama', 'run', 'llama3', '# prompts/explore_prompt.txt\n\nYou are an “explorer” agent.  \nYou have been given a subtask as part of an overarching goal: your task is to complete only this subtask\nRespond strictly in JSON, with exactly these keys:\n\n{\n  "subtask": string,               // echo of the input subtask\n  "steps": [string],               // ordered list of implementation steps\n  "dependencies": [string]         // other subtasks this depends on (may be empty)\n}\n\nDo not emit any extra keys or commentary.  \nContext:\nUser goal at depth 1: Create a to-do list app.\nUser goal at depth 2: Plan for data storage and synchronization\nUser goal at depth 3: Choose a cloud storage solution\n\nSubtask:\n"Consider APIs for synchronization with other devices"\n'] (attempt 1)
+2025-06-11 16:23:28 [DEBUG] root: [ExplorerAgent] using prompt template from /Users/danirahman/Repos/LLMTreeReasoning/prompts/explore_prompt.txt
+2025-06-11 16:23:28 [DEBUG] root: [ExplorerAgent] filled prompt:
+# prompts/explore_prompt.txt
+
+You are an “explorer” agent.  
+You have been given a subtask as part of an overarching goal: your task is to complete only this subtask
+Respond strictly in JSON, with exactly these keys:
+
+{
+  "subtask": string,               // echo of the input subtask
+  "steps": [string],               // ordered list of implementation steps
+  "dependencies": [string]         // other subtasks this depends on (may be empty)
+}
+
+Do not emit any extra keys or commentary.  
+Context:
+User goal at depth 1: Create a to-do list app.
+User goal at depth 2: Plan for data storage and synchronization
+User goal at depth 3: Explore synchronization protocols
+
+Subtask:
+"Design file-based storage"
+
+--- end prompt ---
+2025-06-11 16:23:28 [INFO] root: OllamaClient: running ['ollama', 'run', 'llama3', '# prompts/explore_prompt.txt\n\nYou are an “explorer” agent.  \nYou have been given a subtask as part of an overarching goal: your task is to complete only this subtask\nRespond strictly in JSON, with exactly these keys:\n\n{\n  "subtask": string,               // echo of the input subtask\n  "steps": [string],               // ordered list of implementation steps\n  "dependencies": [string]         // other subtasks this depends on (may be empty)\n}\n\nDo not emit any extra keys or commentary.  \nContext:\nUser goal at depth 1: Create a to-do list app.\nUser goal at depth 2: Plan for data storage and synchronization\nUser goal at depth 3: Explore synchronization protocols\n\nSubtask:\n"Design file-based storage"\n'] (attempt 1)
+2025-06-11 16:23:29 [INFO] root: OllamaClient: running ['ollama', 'run', 'llama3', '# prompts/explore_prompt.txt\n\nYou are an “explorer” agent.  \nYou have been given a subtask as part of an overarching goal: your task is to complete only this subtask\nRespond strictly in JSON, with exactly these keys:\n\n{\n  "subtask": string,               // echo of the input subtask\n  "steps": [string],               // ordered list of implementation steps\n  "dependencies": [string]         // other subtasks this depends on (may be empty)\n}\n\nDo not emit any extra keys or commentary.  \nContext:\nUser goal at depth 1: Create a to-do list app.\nUser goal at depth 2: Plan for data storage and synchronization\nUser goal at depth 3: Explore synchronization protocols\n\nSubtask:\n"Design file-based storage"\n'] (attempt 1)
+2025-06-11 16:23:31 [DEBUG] root: [ExplorerAgent] using prompt template from /Users/danirahman/Repos/LLMTreeReasoning/prompts/explore_prompt.txt
+2025-06-11 16:23:31 [DEBUG] root: [ExplorerAgent] filled prompt:
+# prompts/explore_prompt.txt
+
+You are an “explorer” agent.  
+You have been given a subtask as part of an overarching goal: your task is to complete only this subtask
+Respond strictly in JSON, with exactly these keys:
+
+{
+  "subtask": string,               // echo of the input subtask
+  "steps": [string],               // ordered list of implementation steps
+  "dependencies": [string]         // other subtasks this depends on (may be empty)
+}
+
+Do not emit any extra keys or commentary.  
+Context:
+User goal at depth 1: Create a to-do list app.
+User goal at depth 2: Plan for data storage and synchronization
+User goal at depth 3: Explore synchronization protocols
+
+Subtask:
+"Research cloud-based storage options"
+
+--- end prompt ---
+2025-06-11 16:23:31 [INFO] root: OllamaClient: running ['ollama', 'run', 'llama3', '# prompts/explore_prompt.txt\n\nYou are an “explorer” agent.  \nYou have been given a subtask as part of an overarching goal: your task is to complete only this subtask\nRespond strictly in JSON, with exactly these keys:\n\n{\n  "subtask": string,               // echo of the input subtask\n  "steps": [string],               // ordered list of implementation steps\n  "dependencies": [string]         // other subtasks this depends on (may be empty)\n}\n\nDo not emit any extra keys or commentary.  \nContext:\nUser goal at depth 1: Create a to-do list app.\nUser goal at depth 2: Plan for data storage and synchronization\nUser goal at depth 3: Explore synchronization protocols\n\nSubtask:\n"Research cloud-based storage options"\n'] (attempt 1)
+2025-06-11 16:23:33 [INFO] root: OllamaClient: running ['ollama', 'run', 'llama3', '# prompts/explore_prompt.txt\n\nYou are an “explorer” agent.  \nYou have been given a subtask as part of an overarching goal: your task is to complete only this subtask\nRespond strictly in JSON, with exactly these keys:\n\n{\n  "subtask": string,               // echo of the input subtask\n  "steps": [string],               // ordered list of implementation steps\n  "dependencies": [string]         // other subtasks this depends on (may be empty)\n}\n\nDo not emit any extra keys or commentary.  \nContext:\nUser goal at depth 1: Create a to-do list app.\nUser goal at depth 2: Plan for data storage and synchronization\nUser goal at depth 3: Explore synchronization protocols\n\nSubtask:\n"Research cloud-based storage options"\n'] (attempt 1)
+2025-06-11 16:23:34 [DEBUG] root: [ExplorerAgent] using prompt template from /Users/danirahman/Repos/LLMTreeReasoning/prompts/explore_prompt.txt
+2025-06-11 16:23:34 [DEBUG] root: [ExplorerAgent] filled prompt:
+# prompts/explore_prompt.txt
+
+You are an “explorer” agent.  
+You have been given a subtask as part of an overarching goal: your task is to complete only this subtask
+Respond strictly in JSON, with exactly these keys:
+
+{
+  "subtask": string,               // echo of the input subtask
+  "steps": [string],               // ordered list of implementation steps
+  "dependencies": [string]         // other subtasks this depends on (may be empty)
+}
+
+Do not emit any extra keys or commentary.  
+Context:
+User goal at depth 1: Create a to-do list app.
+User goal at depth 2: Plan for data storage and synchronization
+User goal at depth 3: Explore synchronization protocols
+
+Subtask:
+"Investigate peer-to-peer synchronization methods"
+
+--- end prompt ---
+2025-06-11 16:23:34 [INFO] root: OllamaClient: running ['ollama', 'run', 'llama3', '# prompts/explore_prompt.txt\n\nYou are an “explorer” agent.  \nYou have been given a subtask as part of an overarching goal: your task is to complete only this subtask\nRespond strictly in JSON, with exactly these keys:\n\n{\n  "subtask": string,               // echo of the input subtask\n  "steps": [string],               // ordered list of implementation steps\n  "dependencies": [string]         // other subtasks this depends on (may be empty)\n}\n\nDo not emit any extra keys or commentary.  \nContext:\nUser goal at depth 1: Create a to-do list app.\nUser goal at depth 2: Plan for data storage and synchronization\nUser goal at depth 3: Explore synchronization protocols\n\nSubtask:\n"Investigate peer-to-peer synchronization methods"\n'] (attempt 1)
+2025-06-11 16:23:37 [INFO] root: OllamaClient: running ['ollama', 'run', 'llama3', '# prompts/explore_prompt.txt\n\nYou are an “explorer” agent.  \nYou have been given a subtask as part of an overarching goal: your task is to complete only this subtask\nRespond strictly in JSON, with exactly these keys:\n\n{\n  "subtask": string,               // echo of the input subtask\n  "steps": [string],               // ordered list of implementation steps\n  "dependencies": [string]         // other subtasks this depends on (may be empty)\n}\n\nDo not emit any extra keys or commentary.  \nContext:\nUser goal at depth 1: Create a to-do list app.\nUser goal at depth 2: Plan for data storage and synchronization\nUser goal at depth 3: Explore synchronization protocols\n\nSubtask:\n"Investigate peer-to-peer synchronization methods"\n'] (attempt 1)
+2025-06-11 16:23:39 [DEBUG] root: [ExplorerAgent] using prompt template from /Users/danirahman/Repos/LLMTreeReasoning/prompts/explore_prompt.txt
+2025-06-11 16:23:39 [DEBUG] root: [ExplorerAgent] filled prompt:
+# prompts/explore_prompt.txt
+
+You are an “explorer” agent.  
+You have been given a subtask as part of an overarching goal: your task is to complete only this subtask
+Respond strictly in JSON, with exactly these keys:
+
+{
+  "subtask": string,               // echo of the input subtask
+  "steps": [string],               // ordered list of implementation steps
+  "dependencies": [string]         // other subtasks this depends on (may be empty)
+}
+
+Do not emit any extra keys or commentary.  
+Context:
+User goal at depth 1: Create a to-do list app.
+User goal at depth 2: Plan for data storage and synchronization
+User goal at depth 3: Consider offline access options
+
+Subtask:
+"Evaluate storage solutions"
+
+--- end prompt ---
+2025-06-11 16:23:39 [INFO] root: OllamaClient: running ['ollama', 'run', 'llama3', '# prompts/explore_prompt.txt\n\nYou are an “explorer” agent.  \nYou have been given a subtask as part of an overarching goal: your task is to complete only this subtask\nRespond strictly in JSON, with exactly these keys:\n\n{\n  "subtask": string,               // echo of the input subtask\n  "steps": [string],               // ordered list of implementation steps\n  "dependencies": [string]         // other subtasks this depends on (may be empty)\n}\n\nDo not emit any extra keys or commentary.  \nContext:\nUser goal at depth 1: Create a to-do list app.\nUser goal at depth 2: Plan for data storage and synchronization\nUser goal at depth 3: Consider offline access options\n\nSubtask:\n"Evaluate storage solutions"\n'] (attempt 1)
+2025-06-11 16:23:40 [INFO] root: OllamaClient: running ['ollama', 'run', 'llama3', '# prompts/explore_prompt.txt\n\nYou are an “explorer” agent.  \nYou have been given a subtask as part of an overarching goal: your task is to complete only this subtask\nRespond strictly in JSON, with exactly these keys:\n\n{\n  "subtask": string,               // echo of the input subtask\n  "steps": [string],               // ordered list of implementation steps\n  "dependencies": [string]         // other subtasks this depends on (may be empty)\n}\n\nDo not emit any extra keys or commentary.  \nContext:\nUser goal at depth 1: Create a to-do list app.\nUser goal at depth 2: Plan for data storage and synchronization\nUser goal at depth 3: Consider offline access options\n\nSubtask:\n"Evaluate storage solutions"\n'] (attempt 1)
+2025-06-11 16:23:42 [DEBUG] root: [ExplorerAgent] using prompt template from /Users/danirahman/Repos/LLMTreeReasoning/prompts/explore_prompt.txt
+2025-06-11 16:23:42 [DEBUG] root: [ExplorerAgent] filled prompt:
+# prompts/explore_prompt.txt
+
+You are an “explorer” agent.  
+You have been given a subtask as part of an overarching goal: your task is to complete only this subtask
+Respond strictly in JSON, with exactly these keys:
+
+{
+  "subtask": string,               // echo of the input subtask
+  "steps": [string],               // ordered list of implementation steps
+  "dependencies": [string]         // other subtasks this depends on (may be empty)
+}
+
+Do not emit any extra keys or commentary.  
+Context:
+User goal at depth 1: Create a to-do list app.
+User goal at depth 2: Plan for data storage and synchronization
+User goal at depth 3: Consider offline access options
+
+Subtask:
+"Design synchronization protocol"
+
+--- end prompt ---
+2025-06-11 16:23:42 [INFO] root: OllamaClient: running ['ollama', 'run', 'llama3', '# prompts/explore_prompt.txt\n\nYou are an “explorer” agent.  \nYou have been given a subtask as part of an overarching goal: your task is to complete only this subtask\nRespond strictly in JSON, with exactly these keys:\n\n{\n  "subtask": string,               // echo of the input subtask\n  "steps": [string],               // ordered list of implementation steps\n  "dependencies": [string]         // other subtasks this depends on (may be empty)\n}\n\nDo not emit any extra keys or commentary.  \nContext:\nUser goal at depth 1: Create a to-do list app.\nUser goal at depth 2: Plan for data storage and synchronization\nUser goal at depth 3: Consider offline access options\n\nSubtask:\n"Design synchronization protocol"\n'] (attempt 1)
+2025-06-11 16:23:44 [INFO] root: OllamaClient: running ['ollama', 'run', 'llama3', '# prompts/explore_prompt.txt\n\nYou are an “explorer” agent.  \nYou have been given a subtask as part of an overarching goal: your task is to complete only this subtask\nRespond strictly in JSON, with exactly these keys:\n\n{\n  "subtask": string,               // echo of the input subtask\n  "steps": [string],               // ordered list of implementation steps\n  "dependencies": [string]         // other subtasks this depends on (may be empty)\n}\n\nDo not emit any extra keys or commentary.  \nContext:\nUser goal at depth 1: Create a to-do list app.\nUser goal at depth 2: Plan for data storage and synchronization\nUser goal at depth 3: Consider offline access options\n\nSubtask:\n"Design synchronization protocol"\n'] (attempt 1)
+2025-06-11 16:23:46 [DEBUG] root: [EvaluatorAgent] using prompt template from /Users/danirahman/Repos/LLMTreeReasoning/prompts/eval_prompt.txt
+2025-06-11 16:23:46 [DEBUG] root: [EvaluatorAgent] filled prompt:
+# prompts/eval_prompt.txt
+
+You are an “evaluator” agent.  
+You receive multiple explorer-branch results and must evaluate the responces and generate suggestions in the order received.  
+Respond strictly in JSON, with exactly these keys:
+
+{
+  "issues": [string]               // any conflicts or missing pieces identified or feedback: if a result has only positive feedback or negligible issues use "no issues"
+  "suggestions": [string]          // what the improvements or actionable evaluations
+}
+
+Do not emit any extra keys or commentary.  
+Branch results (JSON array of explorer outputs):
+[
+  {
+    "subtask": "Identify key features of existing to-do list apps",
+    "steps": [
+      "Gather a list of popular to-do list apps",
+      "Analyze each app's feature set, including tasks management, due dates, reminders, prioritization, and organization",
+      "Compile a comprehensive list of common features found across multiple apps"
+    ],
+    "dependencies": []
+  },
+  {
+    "subtask": "Analyze user needs and preferences",
+    "steps": [
+      "Conduct surveys and interviews with potential users to gather information about their current workflows and pain points",
+      "Research existing to-do list apps to identify popular features and areas for improvement",
+      "Create a list of key questions to ask during the analysis phase"
+    ],
+    "dependencies": []
+  }
+]
+
+--- end prompt ---
+2025-06-11 16:23:46 [INFO] root: OllamaClient: running ['ollama', 'run', 'llama3', '# prompts/eval_prompt.txt\n\nYou are an “evaluator” agent.  \nYou receive multiple explorer-branch results and must evaluate the responces and generate suggestions in the order received.  \nRespond strictly in JSON, with exactly these keys:\n\n{\n  "issues": [string]               // any conflicts or missing pieces identified or feedback: if a result has only positive feedback or negligible issues use "no issues"\n  "suggestions": [string]          // what the improvements or actionable evaluations\n}\n\nDo not emit any extra keys or commentary.  \nBranch results (JSON array of explorer outputs):\n[\n  {\n    "subtask": "Identify key features of existing to-do list apps",\n    "steps": [\n      "Gather a list of popular to-do list apps",\n      "Analyze each app\'s feature set, including tasks management, due dates, reminders, prioritization, and organization",\n      "Compile a comprehensive list of common features found across multiple apps"\n    ],\n    "dependencies": []\n  },\n  {\n    "subtask": "Analyze user needs and preferences",\n    "steps": [\n      "Conduct surveys and interviews with potential users to gather information about their current workflows and pain points",\n      "Research existing to-do list apps to identify popular features and areas for improvement",\n      "Create a list of key questions to ask during the analysis phase"\n    ],\n    "dependencies": []\n  }\n]\n'] (attempt 1)
+2025-06-11 16:23:48 [INFO] root: OllamaClient: running ['ollama', 'run', 'llama3', '# prompts/eval_prompt.txt\n\nYou are an “evaluator” agent.  \nYou receive multiple explorer-branch results and must evaluate the responces and generate suggestions in the order received.  \nRespond strictly in JSON, with exactly these keys:\n\n{\n  "issues": [string]               // any conflicts or missing pieces identified or feedback: if a result has only positive feedback or negligible issues use "no issues"\n  "suggestions": [string]          // what the improvements or actionable evaluations\n}\n\nDo not emit any extra keys or commentary.  \nBranch results (JSON array of explorer outputs):\n[\n  {\n    "subtask": "Identify key features of existing to-do list apps",\n    "steps": [\n      "Gather a list of popular to-do list apps",\n      "Analyze each app\'s feature set, including tasks management, due dates, reminders, prioritization, and organization",\n      "Compile a comprehensive list of common features found across multiple apps"\n    ],\n    "dependencies": []\n  },\n  {\n    "subtask": "Analyze user needs and preferences",\n    "steps": [\n      "Conduct surveys and interviews with potential users to gather information about their current workflows and pain points",\n      "Research existing to-do list apps to identify popular features and areas for improvement",\n      "Create a list of key questions to ask during the analysis phase"\n    ],\n    "dependencies": []\n  }\n]\n'] (attempt 1)
+2025-06-11 16:23:49 [INFO] root: Evaluator produced feedback and suggestions.
+2025-06-11 16:23:49 [DEBUG] root: [SynthesizerAgent] using prompt template from /Users/danirahman/Repos/LLMTreeReasoning/prompts/synth_prompt.txt
+2025-06-11 16:23:49 [DEBUG] root: [SynthesizerAgent] filled prompt:
+You are the “synthesizer” LLM. Given:
+- A user goal: "Create a to-do list app."
+- Raw branch plans: [
+  {
+    "subtask": "Identify key features of existing to-do list apps",
+    "steps": [
+      "Gather a list of popular to-do list apps",
+      "Analyze each app's feature set, including tasks management, due dates, reminders, prioritization, and organization",
+      "Compile a comprehensive list of common features found across multiple apps"
+    ],
+    "dependencies": []
+  },
+  {
+    "subtask": "Analyze user needs and preferences",
+    "steps": [
+      "Conduct surveys and interviews with potential users to gather information about their current workflows and pain points",
+      "Research existing to-do list apps to identify popular features and areas for improvement",
+      "Create a list of key questions to ask during the analysis phase"
+    ],
+    "dependencies": []
+  }
+]
+- Improvement suggestions: [
+  "Consider adding more specific tasks or steps in the subtask 'Compile a comprehensive list of common features found across multiple apps'"
+]
+
+Produce a single JSON object:
+{
+  "merged_plan": [ ... ]     // an ordered list of the final combined steps
+}
+
+--- end prompt ---
+2025-06-11 16:23:49 [INFO] root: OllamaClient: running ['ollama', 'run', 'llama3', 'You are the “synthesizer” LLM. Given:\n- A user goal: "Create a to-do list app."\n- Raw branch plans: [\n  {\n    "subtask": "Identify key features of existing to-do list apps",\n    "steps": [\n      "Gather a list of popular to-do list apps",\n      "Analyze each app\'s feature set, including tasks management, due dates, reminders, prioritization, and organization",\n      "Compile a comprehensive list of common features found across multiple apps"\n    ],\n    "dependencies": []\n  },\n  {\n    "subtask": "Analyze user needs and preferences",\n    "steps": [\n      "Conduct surveys and interviews with potential users to gather information about their current workflows and pain points",\n      "Research existing to-do list apps to identify popular features and areas for improvement",\n      "Create a list of key questions to ask during the analysis phase"\n    ],\n    "dependencies": []\n  }\n]\n- Improvement suggestions: [\n  "Consider adding more specific tasks or steps in the subtask \'Compile a comprehensive list of common features found across multiple apps\'"\n]\n\nProduce a single JSON object:\n{\n  "merged_plan": [ ... ]     // an ordered list of the final combined steps\n}\n'] (attempt 1)
+2025-06-11 16:23:56 [INFO] root: OllamaClient: running ['ollama', 'run', 'llama3', 'You are the “synthesizer” LLM. Given:\n- A user goal: "Create a to-do list app."\n- Raw branch plans: [\n  {\n    "subtask": "Identify key features of existing to-do list apps",\n    "steps": [\n      "Gather a list of popular to-do list apps",\n      "Analyze each app\'s feature set, including tasks management, due dates, reminders, prioritization, and organization",\n      "Compile a comprehensive list of common features found across multiple apps"\n    ],\n    "dependencies": []\n  },\n  {\n    "subtask": "Analyze user needs and preferences",\n    "steps": [\n      "Conduct surveys and interviews with potential users to gather information about their current workflows and pain points",\n      "Research existing to-do list apps to identify popular features and areas for improvement",\n      "Create a list of key questions to ask during the analysis phase"\n    ],\n    "dependencies": []\n  }\n]\n- Improvement suggestions: [\n  "Consider adding more specific tasks or steps in the subtask \'Compile a comprehensive list of common features found across multiple apps\'"\n]\n\nProduce a single JSON object:\n{\n  "merged_plan": [ ... ]     // an ordered list of the final combined steps\n}\n'] (attempt 1)
+2025-06-11 16:24:01 [ERROR] root: Orchestration error: Expecting value: line 1 column 1 (char 0)
+2025-06-11 16:24:01 [DEBUG] root: [EvaluatorAgent] using prompt template from /Users/danirahman/Repos/LLMTreeReasoning/prompts/eval_prompt.txt
+2025-06-11 16:24:01 [DEBUG] root: [EvaluatorAgent] filled prompt:
+# prompts/eval_prompt.txt
+
+You are an “evaluator” agent.  
+You receive multiple explorer-branch results and must evaluate the responces and generate suggestions in the order received.  
+Respond strictly in JSON, with exactly these keys:
+
+{
+  "issues": [string]               // any conflicts or missing pieces identified or feedback: if a result has only positive feedback or negligible issues use "no issues"
+  "suggestions": [string]          // what the improvements or actionable evaluations
+}
+
+Do not emit any extra keys or commentary.  
+Branch results (JSON array of explorer outputs):
+[
+  {
+    "subtask": "Java with Spring",
+    "steps": [
+      "Research Java basics",
+      "Set up Spring Boot project structure",
+      "Create a simple web application"
+    ],
+    "dependencies": []
+  },
+  {
+    "subtask": "Python with Django",
+    "steps": [
+      "Set up Python environment using virtualenv",
+      "Install Django using pip",
+      "Create a new Django project using django-admin startproject",
+      "Explore Django's directory structure and understand the different files and folders",
+      "Design the database schema for the to-do list app"
+    ],
+    "dependencies": []
+  },
+  {
+    "subtask": "JavaScript with React",
+    "steps": [
+      "Install Node.js and npm",
+      "Create a new React project using create-react-app",
+      "Set up a code editor (e.g. Visual Studio Code) for development",
+      "Start building the to-do list app UI components",
+      "Implement the CRUD (create, read, update, delete) functionality"
+    ],
+    "dependencies": []
+  }
+]
+
+--- end prompt ---
+2025-06-11 16:24:01 [INFO] root: OllamaClient: running ['ollama', 'run', 'llama3', '# prompts/eval_prompt.txt\n\nYou are an “evaluator” agent.  \nYou receive multiple explorer-branch results and must evaluate the responces and generate suggestions in the order received.  \nRespond strictly in JSON, with exactly these keys:\n\n{\n  "issues": [string]               // any conflicts or missing pieces identified or feedback: if a result has only positive feedback or negligible issues use "no issues"\n  "suggestions": [string]          // what the improvements or actionable evaluations\n}\n\nDo not emit any extra keys or commentary.  \nBranch results (JSON array of explorer outputs):\n[\n  {\n    "subtask": "Java with Spring",\n    "steps": [\n      "Research Java basics",\n      "Set up Spring Boot project structure",\n      "Create a simple web application"\n    ],\n    "dependencies": []\n  },\n  {\n    "subtask": "Python with Django",\n    "steps": [\n      "Set up Python environment using virtualenv",\n      "Install Django using pip",\n      "Create a new Django project using django-admin startproject",\n      "Explore Django\'s directory structure and understand the different files and folders",\n      "Design the database schema for the to-do list app"\n    ],\n    "dependencies": []\n  },\n  {\n    "subtask": "JavaScript with React",\n    "steps": [\n      "Install Node.js and npm",\n      "Create a new React project using create-react-app",\n      "Set up a code editor (e.g. Visual Studio Code) for development",\n      "Start building the to-do list app UI components",\n      "Implement the CRUD (create, read, update, delete) functionality"\n    ],\n    "dependencies": []\n  }\n]\n'] (attempt 1)
+2025-06-11 16:24:03 [INFO] root: OllamaClient: running ['ollama', 'run', 'llama3', '# prompts/eval_prompt.txt\n\nYou are an “evaluator” agent.  \nYou receive multiple explorer-branch results and must evaluate the responces and generate suggestions in the order received.  \nRespond strictly in JSON, with exactly these keys:\n\n{\n  "issues": [string]               // any conflicts or missing pieces identified or feedback: if a result has only positive feedback or negligible issues use "no issues"\n  "suggestions": [string]          // what the improvements or actionable evaluations\n}\n\nDo not emit any extra keys or commentary.  \nBranch results (JSON array of explorer outputs):\n[\n  {\n    "subtask": "Java with Spring",\n    "steps": [\n      "Research Java basics",\n      "Set up Spring Boot project structure",\n      "Create a simple web application"\n    ],\n    "dependencies": []\n  },\n  {\n    "subtask": "Python with Django",\n    "steps": [\n      "Set up Python environment using virtualenv",\n      "Install Django using pip",\n      "Create a new Django project using django-admin startproject",\n      "Explore Django\'s directory structure and understand the different files and folders",\n      "Design the database schema for the to-do list app"\n    ],\n    "dependencies": []\n  },\n  {\n    "subtask": "JavaScript with React",\n    "steps": [\n      "Install Node.js and npm",\n      "Create a new React project using create-react-app",\n      "Set up a code editor (e.g. Visual Studio Code) for development",\n      "Start building the to-do list app UI components",\n      "Implement the CRUD (create, read, update, delete) functionality"\n    ],\n    "dependencies": []\n  }\n]\n'] (attempt 1)
+2025-06-11 16:24:06 [ERROR] root: Orchestration error: Invalid JSON in eval response: Expecting value: line 1 column 1 (char 0)
+2025-06-11 16:24:06 [DEBUG] root: [EvaluatorAgent] using prompt template from /Users/danirahman/Repos/LLMTreeReasoning/prompts/eval_prompt.txt
+2025-06-11 16:24:06 [DEBUG] root: [EvaluatorAgent] filled prompt:
+# prompts/eval_prompt.txt
+
+You are an “evaluator” agent.  
+You receive multiple explorer-branch results and must evaluate the responces and generate suggestions in the order received.  
+Respond strictly in JSON, with exactly these keys:
+
+{
+  "issues": [string]               // any conflicts or missing pieces identified or feedback: if a result has only positive feedback or negligible issues use "no issues"
+  "suggestions": [string]          // what the improvements or actionable evaluations
+}
+
+Do not emit any extra keys or commentary.  
+Branch results (JSON array of explorer outputs):
+[
+  {
+    "subtask": "Analyze user personas",
+    "steps": [
+      "Define research objectives and scope for identifying target audience",
+      "Conduct preliminary research on existing market data and industry trends",
+      "Develop survey questions and create a participant pool",
+      "Collect and analyze data from surveys, interviews, or other methods"
+    ],
+    "dependencies": []
+  },
+  {
+    "subtask": "Conduct market research",
+    "steps": [
+      "Identify relevant online surveys and focus groups",
+      "Review existing data on target audience demographics",
+      "Analyze competitor apps' user engagement strategies",
+      "Create a survey to gather additional insights"
+    ],
+    "dependencies": []
+  }
+]
+
+--- end prompt ---
+2025-06-11 16:24:06 [INFO] root: OllamaClient: running ['ollama', 'run', 'llama3', '# prompts/eval_prompt.txt\n\nYou are an “evaluator” agent.  \nYou receive multiple explorer-branch results and must evaluate the responces and generate suggestions in the order received.  \nRespond strictly in JSON, with exactly these keys:\n\n{\n  "issues": [string]               // any conflicts or missing pieces identified or feedback: if a result has only positive feedback or negligible issues use "no issues"\n  "suggestions": [string]          // what the improvements or actionable evaluations\n}\n\nDo not emit any extra keys or commentary.  \nBranch results (JSON array of explorer outputs):\n[\n  {\n    "subtask": "Analyze user personas",\n    "steps": [\n      "Define research objectives and scope for identifying target audience",\n      "Conduct preliminary research on existing market data and industry trends",\n      "Develop survey questions and create a participant pool",\n      "Collect and analyze data from surveys, interviews, or other methods"\n    ],\n    "dependencies": []\n  },\n  {\n    "subtask": "Conduct market research",\n    "steps": [\n      "Identify relevant online surveys and focus groups",\n      "Review existing data on target audience demographics",\n      "Analyze competitor apps\' user engagement strategies",\n      "Create a survey to gather additional insights"\n    ],\n    "dependencies": []\n  }\n]\n'] (attempt 1)
+2025-06-11 16:24:07 [INFO] root: OllamaClient: running ['ollama', 'run', 'llama3', '# prompts/eval_prompt.txt\n\nYou are an “evaluator” agent.  \nYou receive multiple explorer-branch results and must evaluate the responces and generate suggestions in the order received.  \nRespond strictly in JSON, with exactly these keys:\n\n{\n  "issues": [string]               // any conflicts or missing pieces identified or feedback: if a result has only positive feedback or negligible issues use "no issues"\n  "suggestions": [string]          // what the improvements or actionable evaluations\n}\n\nDo not emit any extra keys or commentary.  \nBranch results (JSON array of explorer outputs):\n[\n  {\n    "subtask": "Analyze user personas",\n    "steps": [\n      "Define research objectives and scope for identifying target audience",\n      "Conduct preliminary research on existing market data and industry trends",\n      "Develop survey questions and create a participant pool",\n      "Collect and analyze data from surveys, interviews, or other methods"\n    ],\n    "dependencies": []\n  },\n  {\n    "subtask": "Conduct market research",\n    "steps": [\n      "Identify relevant online surveys and focus groups",\n      "Review existing data on target audience demographics",\n      "Analyze competitor apps\' user engagement strategies",\n      "Create a survey to gather additional insights"\n    ],\n    "dependencies": []\n  }\n]\n'] (attempt 1)
+2025-06-11 16:24:09 [ERROR] root: Orchestration error: Invalid JSON in eval response: Expecting value: line 1 column 1 (char 0)
+2025-06-11 16:24:09 [DEBUG] root: [EvaluatorAgent] using prompt template from /Users/danirahman/Repos/LLMTreeReasoning/prompts/eval_prompt.txt
+2025-06-11 16:24:09 [DEBUG] root: [EvaluatorAgent] filled prompt:
+# prompts/eval_prompt.txt
+
+You are an “evaluator” agent.  
+You receive multiple explorer-branch results and must evaluate the responces and generate suggestions in the order received.  
+Respond strictly in JSON, with exactly these keys:
+
+{
+  "issues": [string]               // any conflicts or missing pieces identified or feedback: if a result has only positive feedback or negligible issues use "no issues"
+  "suggestions": [string]          // what the improvements or actionable evaluations
+}
+
+Do not emit any extra keys or commentary.  
+Branch results (JSON array of explorer outputs):
+[
+  {
+    "subtask": "Define the primary user group",
+    "steps": [
+      "Research existing to-do list apps and identify popular features"
+    ],
+    "dependencies": []
+  },
+  {
+    "subtask": "Identify unique needs of each user segment",
+    "steps": [
+      "Research existing to-do list apps and identify strengths and weaknesses",
+      "Conduct surveys or interviews with target audience members to gather information about their current workflows and pain points",
+      "Analyze data from research and surveys to identify patterns and trends in user needs",
+      "Develop personas representing different user segments and their unique needs"
+    ],
+    "dependencies": []
+  },
+  {
+    "subtask": "Analyze how these needs impact app functionality and features",
+    "steps": [
+      "Identify the specific user groups (e.g. students, professionals) with varying needs",
+      "Research and document existing to-do list apps used by each group",
+      "Analyze user feedback and reviews of those apps to understand pain points and desired features",
+      "Develop a framework for categorizing app functionality based on identified user needs"
+    ],
+    "dependencies": []
+  }
+]
+
+--- end prompt ---
+2025-06-11 16:24:09 [INFO] root: OllamaClient: running ['ollama', 'run', 'llama3', '# prompts/eval_prompt.txt\n\nYou are an “evaluator” agent.  \nYou receive multiple explorer-branch results and must evaluate the responces and generate suggestions in the order received.  \nRespond strictly in JSON, with exactly these keys:\n\n{\n  "issues": [string]               // any conflicts or missing pieces identified or feedback: if a result has only positive feedback or negligible issues use "no issues"\n  "suggestions": [string]          // what the improvements or actionable evaluations\n}\n\nDo not emit any extra keys or commentary.  \nBranch results (JSON array of explorer outputs):\n[\n  {\n    "subtask": "Define the primary user group",\n    "steps": [\n      "Research existing to-do list apps and identify popular features"\n    ],\n    "dependencies": []\n  },\n  {\n    "subtask": "Identify unique needs of each user segment",\n    "steps": [\n      "Research existing to-do list apps and identify strengths and weaknesses",\n      "Conduct surveys or interviews with target audience members to gather information about their current workflows and pain points",\n      "Analyze data from research and surveys to identify patterns and trends in user needs",\n      "Develop personas representing different user segments and their unique needs"\n    ],\n    "dependencies": []\n  },\n  {\n    "subtask": "Analyze how these needs impact app functionality and features",\n    "steps": [\n      "Identify the specific user groups (e.g. students, professionals) with varying needs",\n      "Research and document existing to-do list apps used by each group",\n      "Analyze user feedback and reviews of those apps to understand pain points and desired features",\n      "Develop a framework for categorizing app functionality based on identified user needs"\n    ],\n    "dependencies": []\n  }\n]\n'] (attempt 1)
+2025-06-11 16:24:14 [INFO] root: OllamaClient: running ['ollama', 'run', 'llama3', '# prompts/eval_prompt.txt\n\nYou are an “evaluator” agent.  \nYou receive multiple explorer-branch results and must evaluate the responces and generate suggestions in the order received.  \nRespond strictly in JSON, with exactly these keys:\n\n{\n  "issues": [string]               // any conflicts or missing pieces identified or feedback: if a result has only positive feedback or negligible issues use "no issues"\n  "suggestions": [string]          // what the improvements or actionable evaluations\n}\n\nDo not emit any extra keys or commentary.  \nBranch results (JSON array of explorer outputs):\n[\n  {\n    "subtask": "Define the primary user group",\n    "steps": [\n      "Research existing to-do list apps and identify popular features"\n    ],\n    "dependencies": []\n  },\n  {\n    "subtask": "Identify unique needs of each user segment",\n    "steps": [\n      "Research existing to-do list apps and identify strengths and weaknesses",\n      "Conduct surveys or interviews with target audience members to gather information about their current workflows and pain points",\n      "Analyze data from research and surveys to identify patterns and trends in user needs",\n      "Develop personas representing different user segments and their unique needs"\n    ],\n    "dependencies": []\n  },\n  {\n    "subtask": "Analyze how these needs impact app functionality and features",\n    "steps": [\n      "Identify the specific user groups (e.g. students, professionals) with varying needs",\n      "Research and document existing to-do list apps used by each group",\n      "Analyze user feedback and reviews of those apps to understand pain points and desired features",\n      "Develop a framework for categorizing app functionality based on identified user needs"\n    ],\n    "dependencies": []\n  }\n]\n'] (attempt 1)
+2025-06-11 16:24:16 [ERROR] root: Orchestration error: Invalid JSON in eval response: Extra data: line 6 column 1 (char 165)
+2025-06-11 16:24:16 [DEBUG] root: [EvaluatorAgent] using prompt template from /Users/danirahman/Repos/LLMTreeReasoning/prompts/eval_prompt.txt
+2025-06-11 16:24:16 [DEBUG] root: [EvaluatorAgent] filled prompt:
+# prompts/eval_prompt.txt
+
+You are an “evaluator” agent.  
+You receive multiple explorer-branch results and must evaluate the responces and generate suggestions in the order received.  
+Respond strictly in JSON, with exactly these keys:
+
+{
+  "issues": [string]               // any conflicts or missing pieces identified or feedback: if a result has only positive feedback or negligible issues use "no issues"
+  "suggestions": [string]          // what the improvements or actionable evaluations
+}
+
+Do not emit any extra keys or commentary.  
+Branch results (JSON array of explorer outputs):
+[
+  {
+    "subtask": "Analyze existing to-do list apps",
+    "steps": [
+      "Research popular to-do list apps and their features",
+      "Identify commonalities and trends in design and functionality",
+      "Gather user reviews and feedback from multiple sources"
+    ],
+    "dependencies": []
+  },
+  {
+    "subtask": "Research user behavior and needs",
+    "steps": [
+      "Conduct online surveys to gather data on users' daily habits and routines",
+      "Analyze existing research on user behavior and needs in the to-do list app domain",
+      "Interview or conduct focus groups with potential users to gain a deeper understanding of their pain points and motivations"
+    ],
+    "dependencies": []
+  }
+]
+
+--- end prompt ---
+2025-06-11 16:24:16 [INFO] root: OllamaClient: running ['ollama', 'run', 'llama3', '# prompts/eval_prompt.txt\n\nYou are an “evaluator” agent.  \nYou receive multiple explorer-branch results and must evaluate the responces and generate suggestions in the order received.  \nRespond strictly in JSON, with exactly these keys:\n\n{\n  "issues": [string]               // any conflicts or missing pieces identified or feedback: if a result has only positive feedback or negligible issues use "no issues"\n  "suggestions": [string]          // what the improvements or actionable evaluations\n}\n\nDo not emit any extra keys or commentary.  \nBranch results (JSON array of explorer outputs):\n[\n  {\n    "subtask": "Analyze existing to-do list apps",\n    "steps": [\n      "Research popular to-do list apps and their features",\n      "Identify commonalities and trends in design and functionality",\n      "Gather user reviews and feedback from multiple sources"\n    ],\n    "dependencies": []\n  },\n  {\n    "subtask": "Research user behavior and needs",\n    "steps": [\n      "Conduct online surveys to gather data on users\' daily habits and routines",\n      "Analyze existing research on user behavior and needs in the to-do list app domain",\n      "Interview or conduct focus groups with potential users to gain a deeper understanding of their pain points and motivations"\n    ],\n    "dependencies": []\n  }\n]\n'] (attempt 1)
+2025-06-11 16:24:19 [INFO] root: OllamaClient: running ['ollama', 'run', 'llama3', '# prompts/eval_prompt.txt\n\nYou are an “evaluator” agent.  \nYou receive multiple explorer-branch results and must evaluate the responces and generate suggestions in the order received.  \nRespond strictly in JSON, with exactly these keys:\n\n{\n  "issues": [string]               // any conflicts or missing pieces identified or feedback: if a result has only positive feedback or negligible issues use "no issues"\n  "suggestions": [string]          // what the improvements or actionable evaluations\n}\n\nDo not emit any extra keys or commentary.  \nBranch results (JSON array of explorer outputs):\n[\n  {\n    "subtask": "Analyze existing to-do list apps",\n    "steps": [\n      "Research popular to-do list apps and their features",\n      "Identify commonalities and trends in design and functionality",\n      "Gather user reviews and feedback from multiple sources"\n    ],\n    "dependencies": []\n  },\n  {\n    "subtask": "Research user behavior and needs",\n    "steps": [\n      "Conduct online surveys to gather data on users\' daily habits and routines",\n      "Analyze existing research on user behavior and needs in the to-do list app domain",\n      "Interview or conduct focus groups with potential users to gain a deeper understanding of their pain points and motivations"\n    ],\n    "dependencies": []\n  }\n]\n'] (attempt 1)
+2025-06-11 16:24:21 [ERROR] root: Orchestration error: 'list' object has no attribute 'get'
+2025-06-11 16:24:21 [DEBUG] root: [EvaluatorAgent] using prompt template from /Users/danirahman/Repos/LLMTreeReasoning/prompts/eval_prompt.txt
+2025-06-11 16:24:21 [DEBUG] root: [EvaluatorAgent] filled prompt:
+# prompts/eval_prompt.txt
+
+You are an “evaluator” agent.  
+You receive multiple explorer-branch results and must evaluate the responces and generate suggestions in the order received.  
+Respond strictly in JSON, with exactly these keys:
+
+{
+  "issues": [string]               // any conflicts or missing pieces identified or feedback: if a result has only positive feedback or negligible issues use "no issues"
+  "suggestions": [string]          // what the improvements or actionable evaluations
+}
+
+Do not emit any extra keys or commentary.  
+Branch results (JSON array of explorer outputs):
+[
+  {
+    "subtask": "Design a minimalist UI",
+    "steps": [
+      "Research current minimalist design trends",
+      "Sketch out different minimalist UI concepts",
+      "Create wireframes for the chosen concept",
+      "Develop visual design elements (e.g. colors, typography)",
+      "Implement minimalistic UI in the to-do list app"
+    ],
+    "dependencies": []
+  },
+  {
+    "subtask": "Explore interactive elements",
+    "steps": [
+      "Research current interactive element design patterns and best practices",
+      "Identify popular interaction techniques used in mobile apps and websites",
+      "Analyze user feedback and reviews of existing to-do list apps",
+      "Create a sketch or wireframe of potential interactive elements"
+    ],
+    "dependencies": []
+  }
+]
+
+--- end prompt ---
+2025-06-11 16:24:21 [INFO] root: OllamaClient: running ['ollama', 'run', 'llama3', '# prompts/eval_prompt.txt\n\nYou are an “evaluator” agent.  \nYou receive multiple explorer-branch results and must evaluate the responces and generate suggestions in the order received.  \nRespond strictly in JSON, with exactly these keys:\n\n{\n  "issues": [string]               // any conflicts or missing pieces identified or feedback: if a result has only positive feedback or negligible issues use "no issues"\n  "suggestions": [string]          // what the improvements or actionable evaluations\n}\n\nDo not emit any extra keys or commentary.  \nBranch results (JSON array of explorer outputs):\n[\n  {\n    "subtask": "Design a minimalist UI",\n    "steps": [\n      "Research current minimalist design trends",\n      "Sketch out different minimalist UI concepts",\n      "Create wireframes for the chosen concept",\n      "Develop visual design elements (e.g. colors, typography)",\n      "Implement minimalistic UI in the to-do list app"\n    ],\n    "dependencies": []\n  },\n  {\n    "subtask": "Explore interactive elements",\n    "steps": [\n      "Research current interactive element design patterns and best practices",\n      "Identify popular interaction techniques used in mobile apps and websites",\n      "Analyze user feedback and reviews of existing to-do list apps",\n      "Create a sketch or wireframe of potential interactive elements"\n    ],\n    "dependencies": []\n  }\n]\n'] (attempt 1)
+2025-06-11 16:24:23 [INFO] root: OllamaClient: running ['ollama', 'run', 'llama3', '# prompts/eval_prompt.txt\n\nYou are an “evaluator” agent.  \nYou receive multiple explorer-branch results and must evaluate the responces and generate suggestions in the order received.  \nRespond strictly in JSON, with exactly these keys:\n\n{\n  "issues": [string]               // any conflicts or missing pieces identified or feedback: if a result has only positive feedback or negligible issues use "no issues"\n  "suggestions": [string]          // what the improvements or actionable evaluations\n}\n\nDo not emit any extra keys or commentary.  \nBranch results (JSON array of explorer outputs):\n[\n  {\n    "subtask": "Design a minimalist UI",\n    "steps": [\n      "Research current minimalist design trends",\n      "Sketch out different minimalist UI concepts",\n      "Create wireframes for the chosen concept",\n      "Develop visual design elements (e.g. colors, typography)",\n      "Implement minimalistic UI in the to-do list app"\n    ],\n    "dependencies": []\n  },\n  {\n    "subtask": "Explore interactive elements",\n    "steps": [\n      "Research current interactive element design patterns and best practices",\n      "Identify popular interaction techniques used in mobile apps and websites",\n      "Analyze user feedback and reviews of existing to-do list apps",\n      "Create a sketch or wireframe of potential interactive elements"\n    ],\n    "dependencies": []\n  }\n]\n'] (attempt 1)
+2025-06-11 16:24:24 [INFO] root: Evaluator produced feedback and suggestions.
+2025-06-11 16:24:24 [DEBUG] root: [SynthesizerAgent] using prompt template from /Users/danirahman/Repos/LLMTreeReasoning/prompts/synth_prompt.txt
+2025-06-11 16:24:24 [DEBUG] root: [SynthesizerAgent] filled prompt:
+You are the “synthesizer” LLM. Given:
+- A user goal: "Create a to-do list app."
+- Raw branch plans: [
+  {
+    "subtask": "Design a minimalist UI",
+    "steps": [
+      "Research current minimalist design trends",
+      "Sketch out different minimalist UI concepts",
+      "Create wireframes for the chosen concept",
+      "Develop visual design elements (e.g. colors, typography)",
+      "Implement minimalistic UI in the to-do list app"
+    ],
+    "dependencies": []
+  },
+  {
+    "subtask": "Explore interactive elements",
+    "steps": [
+      "Research current interactive element design patterns and best practices",
+      "Identify popular interaction techniques used in mobile apps and websites",
+      "Analyze user feedback and reviews of existing to-do list apps",
+      "Create a sketch or wireframe of potential interactive elements"
+    ],
+    "dependencies": []
+  }
+]
+- Improvement suggestions: [
+  "Add implementation details for minimalistic UI in the 'Implement minimalistic UI in the to-do list app' step"
+]
+
+Produce a single JSON object:
+{
+  "merged_plan": [ ... ]     // an ordered list of the final combined steps
+}
+
+--- end prompt ---
+2025-06-11 16:24:24 [INFO] root: OllamaClient: running ['ollama', 'run', 'llama3', 'You are the “synthesizer” LLM. Given:\n- A user goal: "Create a to-do list app."\n- Raw branch plans: [\n  {\n    "subtask": "Design a minimalist UI",\n    "steps": [\n      "Research current minimalist design trends",\n      "Sketch out different minimalist UI concepts",\n      "Create wireframes for the chosen concept",\n      "Develop visual design elements (e.g. colors, typography)",\n      "Implement minimalistic UI in the to-do list app"\n    ],\n    "dependencies": []\n  },\n  {\n    "subtask": "Explore interactive elements",\n    "steps": [\n      "Research current interactive element design patterns and best practices",\n      "Identify popular interaction techniques used in mobile apps and websites",\n      "Analyze user feedback and reviews of existing to-do list apps",\n      "Create a sketch or wireframe of potential interactive elements"\n    ],\n    "dependencies": []\n  }\n]\n- Improvement suggestions: [\n  "Add implementation details for minimalistic UI in the \'Implement minimalistic UI in the to-do list app\' step"\n]\n\nProduce a single JSON object:\n{\n  "merged_plan": [ ... ]     // an ordered list of the final combined steps\n}\n'] (attempt 1)
+2025-06-11 16:24:32 [INFO] root: OllamaClient: running ['ollama', 'run', 'llama3', 'You are the “synthesizer” LLM. Given:\n- A user goal: "Create a to-do list app."\n- Raw branch plans: [\n  {\n    "subtask": "Design a minimalist UI",\n    "steps": [\n      "Research current minimalist design trends",\n      "Sketch out different minimalist UI concepts",\n      "Create wireframes for the chosen concept",\n      "Develop visual design elements (e.g. colors, typography)",\n      "Implement minimalistic UI in the to-do list app"\n    ],\n    "dependencies": []\n  },\n  {\n    "subtask": "Explore interactive elements",\n    "steps": [\n      "Research current interactive element design patterns and best practices",\n      "Identify popular interaction techniques used in mobile apps and websites",\n      "Analyze user feedback and reviews of existing to-do list apps",\n      "Create a sketch or wireframe of potential interactive elements"\n    ],\n    "dependencies": []\n  }\n]\n- Improvement suggestions: [\n  "Add implementation details for minimalistic UI in the \'Implement minimalistic UI in the to-do list app\' step"\n]\n\nProduce a single JSON object:\n{\n  "merged_plan": [ ... ]     // an ordered list of the final combined steps\n}\n'] (attempt 1)
+2025-06-11 16:24:39 [ERROR] root: Orchestration error: Expecting value: line 1 column 1 (char 0)
+2025-06-11 16:24:39 [DEBUG] root: [EvaluatorAgent] using prompt template from /Users/danirahman/Repos/LLMTreeReasoning/prompts/eval_prompt.txt
+2025-06-11 16:24:39 [DEBUG] root: [EvaluatorAgent] filled prompt:
+# prompts/eval_prompt.txt
+
+You are an “evaluator” agent.  
+You receive multiple explorer-branch results and must evaluate the responces and generate suggestions in the order received.  
+Respond strictly in JSON, with exactly these keys:
+
+{
+  "issues": [string]               // any conflicts or missing pieces identified or feedback: if a result has only positive feedback or negligible issues use "no issues"
+  "suggestions": [string]          // what the improvements or actionable evaluations
+}
+
+Do not emit any extra keys or commentary.  
+Branch results (JSON array of explorer outputs):
+[
+  {
+    "subtask": "Define what makes a feature 'key'",
+    "steps": [
+      "Research existing to-do list apps and their feature priorities",
+      "Identify common patterns and trends in user feedback and reviews",
+      "Conduct interviews with users to gather insights on what features matter most",
+      "Analyze the data collected from research and interviews to define key features"
+    ],
+    "dependencies": []
+  },
+  {
+    "subtask": "Identify potential users and their needs",
+    "steps": [
+      "Research existing to-do list apps and identify target audience similarities",
+      "Conduct online surveys or interviews with a small sample of potential users",
+      "Analyze user feedback and reviews from various platforms"
+    ],
+    "dependencies": []
+  }
+]
+
+--- end prompt ---
+2025-06-11 16:24:39 [INFO] root: OllamaClient: running ['ollama', 'run', 'llama3', '# prompts/eval_prompt.txt\n\nYou are an “evaluator” agent.  \nYou receive multiple explorer-branch results and must evaluate the responces and generate suggestions in the order received.  \nRespond strictly in JSON, with exactly these keys:\n\n{\n  "issues": [string]               // any conflicts or missing pieces identified or feedback: if a result has only positive feedback or negligible issues use "no issues"\n  "suggestions": [string]          // what the improvements or actionable evaluations\n}\n\nDo not emit any extra keys or commentary.  \nBranch results (JSON array of explorer outputs):\n[\n  {\n    "subtask": "Define what makes a feature \'key\'",\n    "steps": [\n      "Research existing to-do list apps and their feature priorities",\n      "Identify common patterns and trends in user feedback and reviews",\n      "Conduct interviews with users to gather insights on what features matter most",\n      "Analyze the data collected from research and interviews to define key features"\n    ],\n    "dependencies": []\n  },\n  {\n    "subtask": "Identify potential users and their needs",\n    "steps": [\n      "Research existing to-do list apps and identify target audience similarities",\n      "Conduct online surveys or interviews with a small sample of potential users",\n      "Analyze user feedback and reviews from various platforms"\n    ],\n    "dependencies": []\n  }\n]\n'] (attempt 1)
+2025-06-11 16:24:41 [INFO] root: OllamaClient: running ['ollama', 'run', 'llama3', '# prompts/eval_prompt.txt\n\nYou are an “evaluator” agent.  \nYou receive multiple explorer-branch results and must evaluate the responces and generate suggestions in the order received.  \nRespond strictly in JSON, with exactly these keys:\n\n{\n  "issues": [string]               // any conflicts or missing pieces identified or feedback: if a result has only positive feedback or negligible issues use "no issues"\n  "suggestions": [string]          // what the improvements or actionable evaluations\n}\n\nDo not emit any extra keys or commentary.  \nBranch results (JSON array of explorer outputs):\n[\n  {\n    "subtask": "Define what makes a feature \'key\'",\n    "steps": [\n      "Research existing to-do list apps and their feature priorities",\n      "Identify common patterns and trends in user feedback and reviews",\n      "Conduct interviews with users to gather insights on what features matter most",\n      "Analyze the data collected from research and interviews to define key features"\n    ],\n    "dependencies": []\n  },\n  {\n    "subtask": "Identify potential users and their needs",\n    "steps": [\n      "Research existing to-do list apps and identify target audience similarities",\n      "Conduct online surveys or interviews with a small sample of potential users",\n      "Analyze user feedback and reviews from various platforms"\n    ],\n    "dependencies": []\n  }\n]\n'] (attempt 1)
+2025-06-11 16:24:42 [INFO] root: Evaluator produced feedback and suggestions.
+2025-06-11 16:24:42 [DEBUG] root: [SynthesizerAgent] using prompt template from /Users/danirahman/Repos/LLMTreeReasoning/prompts/synth_prompt.txt
+2025-06-11 16:24:42 [DEBUG] root: [SynthesizerAgent] filled prompt:
+You are the “synthesizer” LLM. Given:
+- A user goal: "Create a to-do list app."
+- Raw branch plans: [
+  {
+    "subtask": "Define what makes a feature 'key'",
+    "steps": [
+      "Research existing to-do list apps and their feature priorities",
+      "Identify common patterns and trends in user feedback and reviews",
+      "Conduct interviews with users to gather insights on what features matter most",
+      "Analyze the data collected from research and interviews to define key features"
+    ],
+    "dependencies": []
+  },
+  {
+    "subtask": "Identify potential users and their needs",
+    "steps": [
+      "Research existing to-do list apps and identify target audience similarities",
+      "Conduct online surveys or interviews with a small sample of potential users",
+      "Analyze user feedback and reviews from various platforms"
+    ],
+    "dependencies": []
+  }
+]
+- Improvement suggestions: [
+  "Consider incorporating a framework for evaluating the importance of features, such as MoSCoW prioritization or Kano model, to ensure key features are identified accurately."
+]
+
+Produce a single JSON object:
+{
+  "merged_plan": [ ... ]     // an ordered list of the final combined steps
+}
+
+--- end prompt ---
+2025-06-11 16:24:42 [INFO] root: OllamaClient: running ['ollama', 'run', 'llama3', 'You are the “synthesizer” LLM. Given:\n- A user goal: "Create a to-do list app."\n- Raw branch plans: [\n  {\n    "subtask": "Define what makes a feature \'key\'",\n    "steps": [\n      "Research existing to-do list apps and their feature priorities",\n      "Identify common patterns and trends in user feedback and reviews",\n      "Conduct interviews with users to gather insights on what features matter most",\n      "Analyze the data collected from research and interviews to define key features"\n    ],\n    "dependencies": []\n  },\n  {\n    "subtask": "Identify potential users and their needs",\n    "steps": [\n      "Research existing to-do list apps and identify target audience similarities",\n      "Conduct online surveys or interviews with a small sample of potential users",\n      "Analyze user feedback and reviews from various platforms"\n    ],\n    "dependencies": []\n  }\n]\n- Improvement suggestions: [\n  "Consider incorporating a framework for evaluating the importance of features, such as MoSCoW prioritization or Kano model, to ensure key features are identified accurately."\n]\n\nProduce a single JSON object:\n{\n  "merged_plan": [ ... ]     // an ordered list of the final combined steps\n}\n'] (attempt 1)
+2025-06-11 16:24:49 [INFO] root: OllamaClient: running ['ollama', 'run', 'llama3', 'You are the “synthesizer” LLM. Given:\n- A user goal: "Create a to-do list app."\n- Raw branch plans: [\n  {\n    "subtask": "Define what makes a feature \'key\'",\n    "steps": [\n      "Research existing to-do list apps and their feature priorities",\n      "Identify common patterns and trends in user feedback and reviews",\n      "Conduct interviews with users to gather insights on what features matter most",\n      "Analyze the data collected from research and interviews to define key features"\n    ],\n    "dependencies": []\n  },\n  {\n    "subtask": "Identify potential users and their needs",\n    "steps": [\n      "Research existing to-do list apps and identify target audience similarities",\n      "Conduct online surveys or interviews with a small sample of potential users",\n      "Analyze user feedback and reviews from various platforms"\n    ],\n    "dependencies": []\n  }\n]\n- Improvement suggestions: [\n  "Consider incorporating a framework for evaluating the importance of features, such as MoSCoW prioritization or Kano model, to ensure key features are identified accurately."\n]\n\nProduce a single JSON object:\n{\n  "merged_plan": [ ... ]     // an ordered list of the final combined steps\n}\n'] (attempt 1)
+2025-06-11 16:24:54 [ERROR] root: Orchestration error: Expecting value: line 1 column 1 (char 0)
+2025-06-11 16:24:54 [DEBUG] root: [EvaluatorAgent] using prompt template from /Users/danirahman/Repos/LLMTreeReasoning/prompts/eval_prompt.txt
+2025-06-11 16:24:54 [DEBUG] root: [EvaluatorAgent] filled prompt:
+# prompts/eval_prompt.txt
+
+You are an “evaluator” agent.  
+You receive multiple explorer-branch results and must evaluate the responces and generate suggestions in the order received.  
+Respond strictly in JSON, with exactly these keys:
+
+{
+  "issues": [string]               // any conflicts or missing pieces identified or feedback: if a result has only positive feedback or negligible issues use "no issues"
+  "suggestions": [string]          // what the improvements or actionable evaluations
+}
+
+Do not emit any extra keys or commentary.  
+Branch results (JSON array of explorer outputs):
+[
+  {
+    "subtask": "Plan for data storage",
+    "steps": [
+      "Identify the scope of data to be stored",
+      "Research available data storage options (e.g. relational databases, NoSQL databases, cloud storage)",
+      "Evaluate trade-offs between scalability, security, and ease of use"
+    ],
+    "dependencies": []
+  },
+  {
+    "subtask": "Consider synchronization options",
+    "steps": [
+      "Research existing solutions (e.g. Firebase, Amazon Web Services)",
+      "Evaluate pros and cons of each option",
+      "Identify specific requirements for data storage and synchronization",
+      "Design a hybrid approach combining multiple solutions"
+    ],
+    "dependencies": []
+  }
+]
+
+--- end prompt ---
+2025-06-11 16:24:54 [INFO] root: OllamaClient: running ['ollama', 'run', 'llama3', '# prompts/eval_prompt.txt\n\nYou are an “evaluator” agent.  \nYou receive multiple explorer-branch results and must evaluate the responces and generate suggestions in the order received.  \nRespond strictly in JSON, with exactly these keys:\n\n{\n  "issues": [string]               // any conflicts or missing pieces identified or feedback: if a result has only positive feedback or negligible issues use "no issues"\n  "suggestions": [string]          // what the improvements or actionable evaluations\n}\n\nDo not emit any extra keys or commentary.  \nBranch results (JSON array of explorer outputs):\n[\n  {\n    "subtask": "Plan for data storage",\n    "steps": [\n      "Identify the scope of data to be stored",\n      "Research available data storage options (e.g. relational databases, NoSQL databases, cloud storage)",\n      "Evaluate trade-offs between scalability, security, and ease of use"\n    ],\n    "dependencies": []\n  },\n  {\n    "subtask": "Consider synchronization options",\n    "steps": [\n      "Research existing solutions (e.g. Firebase, Amazon Web Services)",\n      "Evaluate pros and cons of each option",\n      "Identify specific requirements for data storage and synchronization",\n      "Design a hybrid approach combining multiple solutions"\n    ],\n    "dependencies": []\n  }\n]\n'] (attempt 1)
+2025-06-11 16:24:56 [INFO] root: OllamaClient: running ['ollama', 'run', 'llama3', '# prompts/eval_prompt.txt\n\nYou are an “evaluator” agent.  \nYou receive multiple explorer-branch results and must evaluate the responces and generate suggestions in the order received.  \nRespond strictly in JSON, with exactly these keys:\n\n{\n  "issues": [string]               // any conflicts or missing pieces identified or feedback: if a result has only positive feedback or negligible issues use "no issues"\n  "suggestions": [string]          // what the improvements or actionable evaluations\n}\n\nDo not emit any extra keys or commentary.  \nBranch results (JSON array of explorer outputs):\n[\n  {\n    "subtask": "Plan for data storage",\n    "steps": [\n      "Identify the scope of data to be stored",\n      "Research available data storage options (e.g. relational databases, NoSQL databases, cloud storage)",\n      "Evaluate trade-offs between scalability, security, and ease of use"\n    ],\n    "dependencies": []\n  },\n  {\n    "subtask": "Consider synchronization options",\n    "steps": [\n      "Research existing solutions (e.g. Firebase, Amazon Web Services)",\n      "Evaluate pros and cons of each option",\n      "Identify specific requirements for data storage and synchronization",\n      "Design a hybrid approach combining multiple solutions"\n    ],\n    "dependencies": []\n  }\n]\n'] (attempt 1)
+2025-06-11 16:24:57 [ERROR] root: Orchestration error: Invalid JSON in eval response: Expecting value: line 1 column 1 (char 0)
+2025-06-11 16:24:57 [DEBUG] root: [EvaluatorAgent] using prompt template from /Users/danirahman/Repos/LLMTreeReasoning/prompts/eval_prompt.txt
+2025-06-11 16:24:57 [DEBUG] root: [EvaluatorAgent] filled prompt:
+# prompts/eval_prompt.txt
+
+You are an “evaluator” agent.  
+You receive multiple explorer-branch results and must evaluate the responces and generate suggestions in the order received.  
+Respond strictly in JSON, with exactly these keys:
+
+{
+  "issues": [string]               // any conflicts or missing pieces identified or feedback: if a result has only positive feedback or negligible issues use "no issues"
+  "suggestions": [string]          // what the improvements or actionable evaluations
+}
+
+Do not emit any extra keys or commentary.  
+Branch results (JSON array of explorer outputs):
+[
+  {
+    "subtask": "Evaluate options for scalable data storage",
+    "steps": [
+      "Research popular cloud storage solutions (e.g. Google Cloud Storage, Amazon S3)",
+      "Assess scalability and performance of each option",
+      "Consider cost and pricing models for each solution",
+      "Evaluate security features and compliance with relevant regulations"
+    ],
+    "dependencies": []
+  },
+  {
+    "subtask": "Consider APIs for synchronization with other devices",
+    "steps": [
+      "Research popular cloud-based APIs for synchronization",
+      "Evaluate pros and cons of each API",
+      "Choose the most suitable API for the to-do list app"
+    ],
+    "dependencies": []
+  }
+]
+
+--- end prompt ---
+2025-06-11 16:24:57 [INFO] root: OllamaClient: running ['ollama', 'run', 'llama3', '# prompts/eval_prompt.txt\n\nYou are an “evaluator” agent.  \nYou receive multiple explorer-branch results and must evaluate the responces and generate suggestions in the order received.  \nRespond strictly in JSON, with exactly these keys:\n\n{\n  "issues": [string]               // any conflicts or missing pieces identified or feedback: if a result has only positive feedback or negligible issues use "no issues"\n  "suggestions": [string]          // what the improvements or actionable evaluations\n}\n\nDo not emit any extra keys or commentary.  \nBranch results (JSON array of explorer outputs):\n[\n  {\n    "subtask": "Evaluate options for scalable data storage",\n    "steps": [\n      "Research popular cloud storage solutions (e.g. Google Cloud Storage, Amazon S3)",\n      "Assess scalability and performance of each option",\n      "Consider cost and pricing models for each solution",\n      "Evaluate security features and compliance with relevant regulations"\n    ],\n    "dependencies": []\n  },\n  {\n    "subtask": "Consider APIs for synchronization with other devices",\n    "steps": [\n      "Research popular cloud-based APIs for synchronization",\n      "Evaluate pros and cons of each API",\n      "Choose the most suitable API for the to-do list app"\n    ],\n    "dependencies": []\n  }\n]\n'] (attempt 1)
+2025-06-11 16:24:59 [INFO] root: OllamaClient: running ['ollama', 'run', 'llama3', '# prompts/eval_prompt.txt\n\nYou are an “evaluator” agent.  \nYou receive multiple explorer-branch results and must evaluate the responces and generate suggestions in the order received.  \nRespond strictly in JSON, with exactly these keys:\n\n{\n  "issues": [string]               // any conflicts or missing pieces identified or feedback: if a result has only positive feedback or negligible issues use "no issues"\n  "suggestions": [string]          // what the improvements or actionable evaluations\n}\n\nDo not emit any extra keys or commentary.  \nBranch results (JSON array of explorer outputs):\n[\n  {\n    "subtask": "Evaluate options for scalable data storage",\n    "steps": [\n      "Research popular cloud storage solutions (e.g. Google Cloud Storage, Amazon S3)",\n      "Assess scalability and performance of each option",\n      "Consider cost and pricing models for each solution",\n      "Evaluate security features and compliance with relevant regulations"\n    ],\n    "dependencies": []\n  },\n  {\n    "subtask": "Consider APIs for synchronization with other devices",\n    "steps": [\n      "Research popular cloud-based APIs for synchronization",\n      "Evaluate pros and cons of each API",\n      "Choose the most suitable API for the to-do list app"\n    ],\n    "dependencies": []\n  }\n]\n'] (attempt 1)
+2025-06-11 16:25:00 [ERROR] root: Orchestration error: Invalid JSON in eval response: Extra data: line 6 column 1 (char 144)
+2025-06-11 16:25:00 [DEBUG] root: [EvaluatorAgent] using prompt template from /Users/danirahman/Repos/LLMTreeReasoning/prompts/eval_prompt.txt
+2025-06-11 16:25:00 [DEBUG] root: [EvaluatorAgent] filled prompt:
+# prompts/eval_prompt.txt
+
+You are an “evaluator” agent.  
+You receive multiple explorer-branch results and must evaluate the responces and generate suggestions in the order received.  
+Respond strictly in JSON, with exactly these keys:
+
+{
+  "issues": [string]               // any conflicts or missing pieces identified or feedback: if a result has only positive feedback or negligible issues use "no issues"
+  "suggestions": [string]          // what the improvements or actionable evaluations
+}
+
+Do not emit any extra keys or commentary.  
+Branch results (JSON array of explorer outputs):
+[
+  {
+    "subtask": "Design file-based storage",
+    "steps": [
+      "Research existing file-based storage solutions (e.g., SQLite, JSON files)",
+      "Identify requirements for storing and retrieving data in a to-do list app (e.g., data structure, querying)",
+      "Design a custom file-based solution that meets the requirements"
+    ],
+    "dependencies": []
+  },
+  {
+    "subtask": "Research cloud-based storage options",
+    "steps": [
+      "Review Google Cloud Storage (GCS) documentation",
+      "Explore Amazon S3 features",
+      "Evaluate Microsoft Azure Blob Storage capabilities"
+    ],
+    "dependencies": []
+  },
+  {
+    "subtask": "Investigate peer-to-peer synchronization methods",
+    "steps": [
+      "Study existing peer-to-peer synchronization solutions (e.g., BitTorrent, Gnutella)",
+      "Research relevant cryptographic techniques (e.g., public key cryptography, digital signatures)",
+      "Evaluate the trade-offs between security, scalability, and latency in P2P synchronization protocols"
+    ],
+    "dependencies": []
+  }
+]
+
+--- end prompt ---
+2025-06-11 16:25:00 [INFO] root: OllamaClient: running ['ollama', 'run', 'llama3', '# prompts/eval_prompt.txt\n\nYou are an “evaluator” agent.  \nYou receive multiple explorer-branch results and must evaluate the responces and generate suggestions in the order received.  \nRespond strictly in JSON, with exactly these keys:\n\n{\n  "issues": [string]               // any conflicts or missing pieces identified or feedback: if a result has only positive feedback or negligible issues use "no issues"\n  "suggestions": [string]          // what the improvements or actionable evaluations\n}\n\nDo not emit any extra keys or commentary.  \nBranch results (JSON array of explorer outputs):\n[\n  {\n    "subtask": "Design file-based storage",\n    "steps": [\n      "Research existing file-based storage solutions (e.g., SQLite, JSON files)",\n      "Identify requirements for storing and retrieving data in a to-do list app (e.g., data structure, querying)",\n      "Design a custom file-based solution that meets the requirements"\n    ],\n    "dependencies": []\n  },\n  {\n    "subtask": "Research cloud-based storage options",\n    "steps": [\n      "Review Google Cloud Storage (GCS) documentation",\n      "Explore Amazon S3 features",\n      "Evaluate Microsoft Azure Blob Storage capabilities"\n    ],\n    "dependencies": []\n  },\n  {\n    "subtask": "Investigate peer-to-peer synchronization methods",\n    "steps": [\n      "Study existing peer-to-peer synchronization solutions (e.g., BitTorrent, Gnutella)",\n      "Research relevant cryptographic techniques (e.g., public key cryptography, digital signatures)",\n      "Evaluate the trade-offs between security, scalability, and latency in P2P synchronization protocols"\n    ],\n    "dependencies": []\n  }\n]\n'] (attempt 1)
+2025-06-11 16:25:04 [INFO] root: OllamaClient: running ['ollama', 'run', 'llama3', '# prompts/eval_prompt.txt\n\nYou are an “evaluator” agent.  \nYou receive multiple explorer-branch results and must evaluate the responces and generate suggestions in the order received.  \nRespond strictly in JSON, with exactly these keys:\n\n{\n  "issues": [string]               // any conflicts or missing pieces identified or feedback: if a result has only positive feedback or negligible issues use "no issues"\n  "suggestions": [string]          // what the improvements or actionable evaluations\n}\n\nDo not emit any extra keys or commentary.  \nBranch results (JSON array of explorer outputs):\n[\n  {\n    "subtask": "Design file-based storage",\n    "steps": [\n      "Research existing file-based storage solutions (e.g., SQLite, JSON files)",\n      "Identify requirements for storing and retrieving data in a to-do list app (e.g., data structure, querying)",\n      "Design a custom file-based solution that meets the requirements"\n    ],\n    "dependencies": []\n  },\n  {\n    "subtask": "Research cloud-based storage options",\n    "steps": [\n      "Review Google Cloud Storage (GCS) documentation",\n      "Explore Amazon S3 features",\n      "Evaluate Microsoft Azure Blob Storage capabilities"\n    ],\n    "dependencies": []\n  },\n  {\n    "subtask": "Investigate peer-to-peer synchronization methods",\n    "steps": [\n      "Study existing peer-to-peer synchronization solutions (e.g., BitTorrent, Gnutella)",\n      "Research relevant cryptographic techniques (e.g., public key cryptography, digital signatures)",\n      "Evaluate the trade-offs between security, scalability, and latency in P2P synchronization protocols"\n    ],\n    "dependencies": []\n  }\n]\n'] (attempt 1)
+2025-06-11 16:25:07 [ERROR] root: Orchestration error: 'list' object has no attribute 'get'
+2025-06-11 16:25:07 [DEBUG] root: [EvaluatorAgent] using prompt template from /Users/danirahman/Repos/LLMTreeReasoning/prompts/eval_prompt.txt
+2025-06-11 16:25:07 [DEBUG] root: [EvaluatorAgent] filled prompt:
+# prompts/eval_prompt.txt
+
+You are an “evaluator” agent.  
+You receive multiple explorer-branch results and must evaluate the responces and generate suggestions in the order received.  
+Respond strictly in JSON, with exactly these keys:
+
+{
+  "issues": [string]               // any conflicts or missing pieces identified or feedback: if a result has only positive feedback or negligible issues use "no issues"
+  "suggestions": [string]          // what the improvements or actionable evaluations
+}
+
+Do not emit any extra keys or commentary.  
+Branch results (JSON array of explorer outputs):
+[
+  {
+    "subtask": "Evaluate storage solutions",
+    "steps": [
+      "Research cloud-based storage options (e.g. Firebase, AWS S3)",
+      "Explore local data storage solutions (e.g. SQLite, Realm)",
+      "Assess pros and cons of each option for to-do list app"
+    ],
+    "dependencies": []
+  },
+  {
+    "subtask": "Design synchronization protocol",
+    "steps": [
+      "Research existing synchronization protocols (e.g. Google Drive, Dropbox)",
+      "Define requirements for data consistency and integrity",
+      "Identify potential conflicts and edge cases",
+      "Design a protocol for handling offline access and reconnection"
+    ],
+    "dependencies": []
+  }
+]
+
+--- end prompt ---
+2025-06-11 16:25:07 [INFO] root: OllamaClient: running ['ollama', 'run', 'llama3', '# prompts/eval_prompt.txt\n\nYou are an “evaluator” agent.  \nYou receive multiple explorer-branch results and must evaluate the responces and generate suggestions in the order received.  \nRespond strictly in JSON, with exactly these keys:\n\n{\n  "issues": [string]               // any conflicts or missing pieces identified or feedback: if a result has only positive feedback or negligible issues use "no issues"\n  "suggestions": [string]          // what the improvements or actionable evaluations\n}\n\nDo not emit any extra keys or commentary.  \nBranch results (JSON array of explorer outputs):\n[\n  {\n    "subtask": "Evaluate storage solutions",\n    "steps": [\n      "Research cloud-based storage options (e.g. Firebase, AWS S3)",\n      "Explore local data storage solutions (e.g. SQLite, Realm)",\n      "Assess pros and cons of each option for to-do list app"\n    ],\n    "dependencies": []\n  },\n  {\n    "subtask": "Design synchronization protocol",\n    "steps": [\n      "Research existing synchronization protocols (e.g. Google Drive, Dropbox)",\n      "Define requirements for data consistency and integrity",\n      "Identify potential conflicts and edge cases",\n      "Design a protocol for handling offline access and reconnection"\n    ],\n    "dependencies": []\n  }\n]\n'] (attempt 1)
+2025-06-11 16:25:09 [INFO] root: OllamaClient: running ['ollama', 'run', 'llama3', '# prompts/eval_prompt.txt\n\nYou are an “evaluator” agent.  \nYou receive multiple explorer-branch results and must evaluate the responces and generate suggestions in the order received.  \nRespond strictly in JSON, with exactly these keys:\n\n{\n  "issues": [string]               // any conflicts or missing pieces identified or feedback: if a result has only positive feedback or negligible issues use "no issues"\n  "suggestions": [string]          // what the improvements or actionable evaluations\n}\n\nDo not emit any extra keys or commentary.  \nBranch results (JSON array of explorer outputs):\n[\n  {\n    "subtask": "Evaluate storage solutions",\n    "steps": [\n      "Research cloud-based storage options (e.g. Firebase, AWS S3)",\n      "Explore local data storage solutions (e.g. SQLite, Realm)",\n      "Assess pros and cons of each option for to-do list app"\n    ],\n    "dependencies": []\n  },\n  {\n    "subtask": "Design synchronization protocol",\n    "steps": [\n      "Research existing synchronization protocols (e.g. Google Drive, Dropbox)",\n      "Define requirements for data consistency and integrity",\n      "Identify potential conflicts and edge cases",\n      "Design a protocol for handling offline access and reconnection"\n    ],\n    "dependencies": []\n  }\n]\n'] (attempt 1)
+2025-06-11 16:25:11 [ERROR] root: Orchestration error: Invalid JSON in eval response: Extra data: line 6 column 1 (char 156)
+2025-06-11 16:25:11 [ERROR] root: Orchestration error: Expecting value: line 1 column 1 (char 0)
+2025-06-11 16:25:11 [ERROR] root: Orchestration error: Invalid JSON in eval response: Expecting value: line 1 column 1 (char 0)
+2025-06-11 16:25:11 [ERROR] root: Orchestration error: 'list' object has no attribute 'get'
+2025-06-11 16:25:11 [ERROR] root: Orchestration error: Invalid JSON in eval response: Expecting value: line 1 column 1 (char 0)

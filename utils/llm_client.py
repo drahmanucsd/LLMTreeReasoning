@@ -4,7 +4,7 @@ import subprocess
 import time
 from typing import Optional
 
-from config import LLM_MODEL, MODEL_TEMPERATURE, MAX_TOKENS, MAX_RETRIES, TIMEOUT_SEC
+from config import LLM_MODEL, MAX_RETRIES, TIMEOUT_SEC
 from utils.logging import log_info, log_error
 
 
@@ -12,20 +12,15 @@ class OllamaClient:
     def __init__(
         self,
         model_name: str = LLM_MODEL,
-        temperature: float = MODEL_TEMPERATURE,
-        max_tokens: Optional[int] = MAX_TOKENS,
     ):
         self.model_name = model_name
-        self.temperature = temperature
-        self.max_tokens = max_tokens
 
     def send(self, prompt: str) -> str:
-        """Call `ollama eval` under the hood, with retries."""
-        cmd = ["ollama", "eval", self.model_name, "--prompt", prompt]
-        if self.temperature is not None:
-            cmd += ["--temperature", str(self.temperature)]
-        if self.max_tokens:
-            cmd += ["--max-tokens", str(self.max_tokens)]
+        """
+        Call `ollama run <model> <prompt>` under the hood, with retries.
+        """
+        # Pass the prompt as a positional argument, no --prompt flag
+        cmd = ["ollama", "run", self.model_name, prompt]
 
         attempt = 0
         while attempt < MAX_RETRIES:
@@ -47,6 +42,6 @@ class OllamaClient:
                     )
             except subprocess.TimeoutExpired:
                 log_error(f"OllamaClient timeout after {TIMEOUT_SEC}s (attempt {attempt})")
-            time.sleep(1)  # backoff
+            time.sleep(1)
 
         raise RuntimeError("OllamaClient: all retries exhausted")
